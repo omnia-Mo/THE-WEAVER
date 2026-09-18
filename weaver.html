@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>The Weaver | Case 001</title>
+
+    <link rel="stylesheet" href="weaver.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=IM+Fell+English:ital@0;1&family=Noto+Kufi+Arabic:wght@400;500;600&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- =====================================================
+         ATMOSPHERE
+    ====================================================== -->
+
+    <div class="ambient-glow"></div>
+    <div class="magic-dust"></div>
+
+
+    <!-- =====================================================
+         TOP BAR
+    ====================================================== -->
+
+    <header class="top-bar">
+
+        <div class="case-label">
+            CASE 001 <span>•</span> CLASSIFIED
+        </div>
+
+        <div class="language-switch">
+
+            <button id="enBtn" class="lang-btn active">
+                EN
+            </button>
+
+            <span>/</span>
+
+            <button id="arBtn" class="lang-btn">
+                AR
+            </button>
+
+        </div>
+
+        <!-- SPEED BUTTON -->
+
+        <button
+            id="speedBtn"
+            class="speed-btn">
+            SPEED ×1
+        </button>
+
+        <button
+            id="closeCaseBtn"
+            class="close-btn"
+            aria-label="Close">
+            ×
+        </button>
+
+    </header>
+
+
+    <!-- =====================================================
+         ARCHIVE
+    ====================================================== -->
+
+    <main id="archiveScreen" class="screen archive-screen">
+
+        <div class="archive-content">
+
+            <div class="archive-image-wrapper">
+
+                <img
+                    src="images/weaver-archieve.png"
+                    alt="The Weaver Archive"
+                    class="archive-image">
+
+                <div class="classified-stamp">
+                    CLASSIFIED
+                </div>
+
+            </div>
+
+
+            <div class="archive-info">
+
+                <span class="archive-label">
+                    ARCHIVE ENTRY 001
+                </span>
+
+                <h1
+                    data-en="THE WEAVER'S ARCHIVE"
+                    data-ar="أرشيف الويفر">
+                    THE WEAVER'S ARCHIVE
+                </h1>
+
+                <p
+                    data-en="An ancient record recovered from the Hogwarts archives."
+                    data-ar="سجلّ قديم تم العثور عليه داخل أرشيف هوجورتس.">
+                    An ancient record recovered from the Hogwarts archives.
+                </p>
+
+
+                <div class="archive-warning">
+
+                    <span>⚠</span>
+
+                    <p
+                        data-en="This record contains restricted magical knowledge."
+                        data-ar="يحتوي هذا السجل على معرفة سحرية محظورة.">
+                        This record contains restricted magical knowledge.
+                    </p>
+
+                </div>
+
+
+                <button
+                    id="openArchiveBtn"
+                    class="archive-button">
+
+                    <span
+                        data-en="OPEN THE ARCHIVE"
+                        data-ar="افتح الأرشيف">
+                        OPEN THE ARCHIVE
+                    </span>
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- =====================================================
+         WEAVER CHAMBER
+    ====================================================== -->
+
+    <section
+        id="weaverChamber"
+        class="screen chamber-screen hidden">
+
+        <div class="book-scene">
+
+            <img
+                src="images/weaver-chamber.png"
+                class="chamber-image"
+                alt="The Weaver Chamber">
+
+
+            <div class="book-layer">
+
+                <img
+                    src="images/weaver-book.png"
+                    class="weaver-book"
+                    alt="Open ancient book">
+
+
+                <div
+                    id="bookTextLeft"
+                    class="book-page-text book-left">
+                </div>
+
+
+                <div
+                    id="bookTextRight"
+                    class="book-page-text book-right">
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div
+            id="sceneLabel"
+            class="scene-label">
+            THE WEAVER
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         GREAT CORRECTION
+    ====================================================== -->
+
+    <section
+        id="greatCorrection"
+        class="screen correction-screen hidden">
+
+        <div class="correction-image-wrapper">
+
+            <img
+                src="images/great-correction.png"
+                class="correction-image"
+                alt="The Great Correction">
+
+        </div>
+
+
+        <div
+            id="correctionText"
+            class="correction-content">
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         BALANCE CHAMBER
+    ====================================================== -->
+
+    <section
+        id="balanceChamber"
+        class="screen balance-screen hidden">
+
+        <div class="balance-overlay"></div>
+
+
+        <div
+            id="balanceText"
+            class="balance-content">
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         FINAL
+    ====================================================== -->
+
+    <section
+        id="finalScreen"
+        class="screen final-screen hidden">
+
+        <div class="final-content">
+
+            <div class="status-block">
+
+                <div
+                    class="status-title"
+                    data-en="THE WEAVER"
+                    data-ar="الويفر">
+                    THE WEAVER
+                </div>
+
+                <div class="status-row">
+
+                    <span
+                        data-en="STATUS"
+                        data-ar="الحالة">
+                        STATUS
+                    </span>
+
+                    <strong
+                        data-en="AWAKE"
+                        data-ar="مستيقظ">
+                        AWAKE
+                    </strong>
+
+                </div>
+
+
+                <div
+                    class="status-title"
+                    data-en="THE GREAT CORRECTION"
+                    data-ar="التصحيح الأعظم">
+                    THE GREAT CORRECTION
+                </div>
+
+                <div class="status-row">
+
+                    <span
+                        data-en="STATUS"
+                        data-ar="الحالة">
+                        STATUS
+                    </span>
+
+                    <strong
+                        data-en="ACTIVE"
+                        data-ar="نشط">
+                        ACTIVE
+                    </strong>
+
+                </div>
+
+
+                <div
+                    class="status-title"
+                    data-en="MAGICAL STABILITY"
+                    data-ar="الاستقرار السحري">
+                    MAGICAL STABILITY
+                </div>
+
+                <div class="status-row critical">
+
+                    <span
+                        data-en="STATUS"
+                        data-ar="الحالة">
+                        STATUS
+                    </span>
+
+                    <strong
+                        data-en="CRITICAL"
+                        data-ar="حرج">
+                        CRITICAL
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div
+                id="finalMessage"
+                class="final-message">
+            </div>
+
+
+            <div class="descend-container">
+
+                <div
+                    class="descend-title"
+                    data-en="BALANCE CHAMBER"
+                    data-ar="غرفة التوازن">
+                    BALANCE CHAMBER
+                </div>
+
+                <button
+                    id="descendBtn"
+                    class="descend-btn"
+                    data-en="DESCEND"
+                    data-ar="انزل">
+                    DESCEND
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <script src="weaver.js"></script>
+
+</body>
+
+</html>

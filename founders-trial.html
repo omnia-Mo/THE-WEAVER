@@ -1,0 +1,526 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Founders' Trial | Case 001</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="founders-trial.css">
+</head>
+
+<body>
+
+    <div class="background"></div>
+    <div class="dark-overlay"></div>
+
+
+    <!-- =========================
+         TOP BAR
+    ========================== -->
+
+    <header class="top-bar">
+
+        <div class="case-title">
+
+            <span class="small-label"
+                data-en="CASE FILE 001"
+                data-ar="ملف القضية 001">
+                CASE FILE 001
+            </span>
+
+            <h1
+                data-en="THE FOUNDERS' TRIAL"
+                data-ar="اختبار المؤسسين">
+                THE FOUNDERS' TRIAL
+            </h1>
+
+        </div>
+
+
+        <button id="languageToggle"
+            class="language-btn">
+            AR
+        </button>
+
+    </header>
+
+
+
+    <!-- =========================
+         MAIN GAME
+    ========================== -->
+
+    <main class="game">
+
+
+        <!-- INTRO -->
+
+        <section class="intro">
+
+            <div class="chapter-label"
+                data-en="THE BALANCE CHAMBER — FOUNDERS' TRIAL"
+                data-ar="غرفة التوازن — اختبار المؤسسين">
+                THE BALANCE CHAMBER — FOUNDERS' TRIAL
+            </div>
+
+            <p class="intro-text"
+                data-en="The chamber recognizes the four paths. Restore their places before the balance can be restored."
+                data-ar="تتعرف الغرفة على المسارات الأربعة. أعدها إلى أماكنها قبل أن يمكن استعادة التوازن.">
+                The chamber recognizes the four paths. Restore their places before the balance can be restored.
+            </p>
+
+        </section>
+
+
+
+        <!-- =========================
+             PUZZLE AREA
+        ========================== -->
+
+        <section class="puzzle-area">
+
+
+            <!-- =========================
+                 LEFT AREA
+            ========================== -->
+
+            <aside class="clue-area">
+
+
+                <!-- TABLET -->
+
+                <button id="tabletButton"
+                    class="tablet-button">
+
+                    <img src="images/inscription-tablet.png"
+                        alt="Ancient inscription">
+
+                    <span
+                        data-en="EXAMINE INSCRIPTION"
+                        data-ar="افحص النقش">
+                        EXAMINE INSCRIPTION
+                    </span>
+
+                </button>
+
+
+                <!-- SEAL HINT -->
+
+                <div id="sealHint"
+                    class="side-hint">
+
+                    <span
+                        data-en="Place the four seals on the board."
+                        data-ar="ضع الأختام الأربعة على اللوحة.">
+                        Place the four seals on the board.
+                    </span>
+
+                </div>
+
+            </aside>
+
+
+
+            <!-- =========================
+                 BOARD
+            ========================== -->
+
+            <div class="board-wrapper">
+
+                <div class="board-container"
+                    id="board">
+
+
+                    <!-- BOARD IMAGE -->
+
+                    <img src="images/founders-board.png"
+                        class="founders-board"
+                        alt="Founders Balance Board">
+
+
+
+                    <!-- =========================
+                         TARGETS
+                    ========================== -->
+
+                    <div class="seal-target lion-target"
+                        data-target="lion">
+                    </div>
+
+                    <div class="seal-target serpent-target"
+                        data-target="serpent">
+                    </div>
+
+                    <div class="seal-target eagle-target"
+                        data-target="eagle">
+                    </div>
+
+                    <div class="seal-target badger-target"
+                        data-target="badger">
+                    </div>
+
+
+
+                    <!-- =========================
+                         SEALS
+                    ========================== -->
+
+                    <div class="draggable seal lion-seal"
+                        id="lion"
+                        draggable="true"
+                        data-type="seal">
+
+                        <img src="images/lion-seal.png"
+                            alt="Lion Seal">
+
+                    </div>
+
+
+                    <div class="draggable seal serpent-seal"
+                        id="serpent"
+                        draggable="true"
+                        data-type="seal">
+
+                        <img src="images/serpent-seal.png"
+                            alt="Serpent Seal">
+
+                    </div>
+
+
+                    <div class="draggable seal eagle-seal"
+                        id="eagle"
+                        draggable="true"
+                        data-type="seal">
+
+                        <img src="images/eagle-seal.png"
+                            alt="Eagle Seal">
+
+                    </div>
+
+
+                    <div class="draggable seal badger-seal"
+                        id="badger"
+                        draggable="true"
+                        data-type="seal">
+
+                        <img src="images/badger-seal.png"
+                            alt="Badger Seal">
+
+                    </div>
+
+
+
+                    <!-- =========================
+                         BALANCE MECHANISM
+                    ========================== -->
+
+                    <div id="balanceMechanism"
+                        class="balance-mechanism">
+
+                        <img src="images/balance-mechanism.png"
+                            alt="Balance Mechanism">
+
+                    </div>
+
+
+
+                    <!-- =========================
+                         AWAKENED
+                    ========================== -->
+
+                    <div id="awakenedLayer"
+                        class="awakened-layer">
+
+                        <img src="images/founders-awakened.png"
+                            alt="The Founders Awakened">
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =========================
+                 RIGHT AREA
+            ========================== -->
+
+            <aside class="status-area">
+
+
+                <!-- STATUS -->
+
+                <div class="status-box">
+
+                    <span class="status-label"
+                        data-en="TRIAL STATUS"
+                        data-ar="حالة الاختبار">
+                        TRIAL STATUS
+                    </span>
+
+
+                    <div id="phaseText"
+                        class="phase-text"
+                        data-en="THE FOUR SEALS AWAIT"
+                        data-ar="الأختام الأربعة تنتظر">
+                        THE FOUR SEALS AWAIT
+                    </div>
+
+
+                    <div class="progress">
+
+                        <div id="progressBar"
+                            class="progress-bar">
+                        </div>
+
+                    </div>
+
+
+                    <div id="progressText"
+                        class="progress-text">
+                        0 / 4
+                    </div>
+
+                </div>
+
+
+
+                <!-- INSTRUCTION -->
+
+                <div id="instructionBox"
+                    class="instruction-box">
+
+                    <p
+                        data-en="Read the inscription first."
+                        data-ar="اقرأ النقش أولاً.">
+                        Read the inscription first.
+                    </p>
+
+                </div>
+
+
+
+                <!-- =========================
+                     RELIC TRAY
+                ========================== -->
+
+                <div id="relicsTray"
+                    class="relics-tray hidden">
+
+
+                    <div class="relic-tray-title"
+                        data-en="THE FOUR RELICS"
+                        data-ar="الآثار الأربعة">
+                        THE FOUR RELICS
+                    </div>
+
+
+                    <p class="relic-tray-subtitle"
+                        data-en="Drag each relic to the path it belongs to."
+                        data-ar="اسحب كل أثر إلى المسار الذي ينتمي إليه.">
+                        Drag each relic to the path it belongs to.
+                    </p>
+
+
+
+                    <div class="relic-items">
+
+
+                        <!-- SWORD -->
+
+                        <div class="draggable relic"
+                            id="sword"
+                            draggable="true"
+                            data-type="relic"
+                            data-target="lion">
+
+                            <img src="images/ancient-sword.png"
+                                alt="Ancient Sword">
+
+                        </div>
+
+
+
+                        <!-- LOCKET -->
+
+                        <div class="draggable relic"
+                            id="locket"
+                            draggable="true"
+                            data-type="relic"
+                            data-target="serpent">
+
+                            <img src="images/enchanted-locket.png"
+                                alt="Enchanted Locket">
+
+                        </div>
+
+
+
+                        <!-- DIADEM -->
+
+                        <div class="draggable relic"
+                            id="diadem"
+                            draggable="true"
+                            data-type="relic"
+                            data-target="eagle">
+
+                            <img src="images/founder-diadem.png"
+                                alt="Founder Diadem">
+
+                        </div>
+
+
+
+                        <!-- CUP -->
+
+                        <div class="draggable relic"
+                            id="cup"
+                            draggable="true"
+                            data-type="relic"
+                            data-target="badger">
+
+                            <img src="images/golden-cup.png"
+                                alt="Golden Cup">
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </aside>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =========================
+         INSCRIPTION MODAL
+    ========================== -->
+
+    <div id="tabletModal"
+        class="modal">
+
+        <div class="modal-content tablet-modal">
+
+            <button id="closeTablet"
+                class="close-btn">
+                ×
+            </button>
+
+
+            <div class="modal-label"
+                data-en="ANCIENT INSCRIPTION"
+                data-ar="نقش قديم">
+                ANCIENT INSCRIPTION
+            </div>
+
+
+            <div class="inscription-text">
+
+                <p
+                    data-en="FOUR PATHS WERE GIVEN FORM."
+                    data-ar="أربعة مسارات اتخذت شكلاً.">
+                    FOUR PATHS WERE GIVEN FORM.
+                </p>
+
+                <p
+                    data-en="COURAGE SHALL FACE THE TRIAL."
+                    data-ar="الشجاعة تواجه الاختبار.">
+                    COURAGE SHALL FACE THE TRIAL.
+                </p>
+
+                <p
+                    data-en="WISDOM SHALL GUARD THE MEMORY."
+                    data-ar="الحكمة تحرس الذاكرة.">
+                    WISDOM SHALL GUARD THE MEMORY.
+                </p>
+
+                <p
+                    data-en="AMBITION SHALL SEEK THE HIDDEN PATH."
+                    data-ar="الطموح يبحث عن الطريق الخفي.">
+                    AMBITION SHALL SEEK THE HIDDEN PATH.
+                </p>
+
+                <p
+                    data-en="LOYALTY SHALL COMPLETE THE CIRCLE."
+                    data-ar="الوفاء يُكمل الدائرة.">
+                    LOYALTY SHALL COMPLETE THE CIRCLE.
+                </p>
+
+            </div>
+
+
+            <div class="inscription-footer"
+                data-en="THE BOARD AWAITS."
+                data-ar="اللوحة تنتظر.">
+                THE BOARD AWAITS.
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =========================
+         SUCCESS MODAL
+    ========================== -->
+
+    <div id="successModal"
+        class="success-modal">
+
+        <div class="success-content">
+
+            <div class="success-line"
+                data-en="BALANCE ACCEPTED"
+                data-ar="تم قبول التوازن">
+                BALANCE ACCEPTED
+            </div>
+
+
+            <h2
+                data-en="THE FOUNDERS AWAKEN"
+                data-ar="المؤسسون يستيقظون">
+                THE FOUNDERS AWAKEN
+            </h2>
+
+
+            <p
+                data-en="The ancient mechanism has recognized the four paths."
+                data-ar="لقد تعرفت الآلية القديمة على المسارات الأربعة.">
+                The ancient mechanism has recognized the four paths.
+            </p>
+
+
+            <button id="returnButton"
+                class="return-button"
+                data-en="RETURN TO CHAMBER"
+                data-ar="العودة إلى الغرفة">
+                RETURN TO CHAMBER
+            </button>
+
+        </div>
+
+    </div>
+
+
+
+    <script src="founders-trial.js"></script>
+
+</body>
+
+</html>
+```

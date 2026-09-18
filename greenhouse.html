@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Greenhouse 03 | Case 001-B</title>
+
+    <link rel="stylesheet" href="greenhouse.css">
+</head>
+
+<body>
+
+<header class="ministry-bar">
+
+    <div class="ministry-title">
+        <span data-en="MINISTRY OF MAGIC" data-ar="وزارة السحر">MINISTRY OF MAGIC</span>
+        <small data-en="MAGICAL INCIDENTS DEPARTMENT"
+               data-ar="قسم الحوادث السحرية">
+            MAGICAL INCIDENTS DEPARTMENT
+        </small>
+    </div>
+
+    <div class="language-switcher">
+        <button id="enBtn" type="button">EN</button>
+        <button id="arBtn" type="button">AR</button>
+    </div>
+
+</header>
+
+
+<main class="greenhouse-scene">
+
+    <div class="scene-darkness"></div>
+    <div class="fog"></div>
+    <div class="magic-light"></div>
+    <div class="particles"></div>
+
+
+    <!-- ================= SCENE HEADER ================= -->
+
+    <section class="scene-header">
+
+        <div class="case-label">
+            <span data-en="CASE FILE 001-B"
+                  data-ar="ملف القضية 001-B">
+                CASE FILE 001-B
+            </span>
+        </div>
+
+        <h1>
+            <span data-en="GREENHOUSE 03"
+                  data-ar="الدفيئة 03">
+                GREENHOUSE 03
+            </span>
+        </h1>
+
+        <p data-en="WOLFSBANE ANOMALY"
+           data-ar="شذوذ نبات الذئب">
+            WOLFSBANE ANOMALY
+        </p>
+
+    </section>
+
+
+    <!-- ================= OBSERVATION ================= -->
+
+    <section class="observation-card">
+
+        <span class="observation-label"
+              data-en="FIELD OBSERVATION"
+              data-ar="ملاحظة ميدانية">
+            FIELD OBSERVATION
+        </span>
+
+        <p data-en="Something is wrong with the magical plants."
+           data-ar="هناك شيء غير طبيعي يحدث للنباتات السحرية.">
+            Something is wrong with the magical plants.
+        </p>
+
+        <small data-en="Inspect the scene and document every anomaly."
+               data-ar="افحصي المكان وسجّلي كل شذوذ.">
+            Inspect the scene and document every anomaly.
+        </small>
+
+    </section>
+
+
+    <!-- ================= EVIDENCE MARKERS ================= -->
+
+    <button class="evidence-marker roots-marker"
+            type="button"
+            onclick="discoverEvidence('roots')">
+
+        <span class="marker-pulse"></span>
+
+        <span class="marker-icon">◇</span>
+
+        <span class="marker-label"
+              data-en="ROOTS"
+              data-ar="الجذور">
+            ROOTS
+        </span>
+
+    </button>
+
+
+    <button class="evidence-marker water-marker"
+            type="button"
+            onclick="discoverEvidence('water')">
+
+        <span class="marker-pulse"></span>
+
+        <span class="marker-icon">≋</span>
+
+        <span class="marker-label"
+              data-en="WATER"
+              data-ar="الماء">
+            WATER
+        </span>
+
+    </button>
+
+
+    <button class="evidence-marker flora-marker"
+            type="button"
+            onclick="discoverEvidence('flora')">
+
+        <span class="marker-pulse"></span>
+
+        <span class="marker-icon">☽</span>
+
+        <span class="marker-label"
+              data-en="MAGICAL FLORA"
+              data-ar="النباتات السحرية">
+            MAGICAL FLORA
+        </span>
+
+    </button>
+
+
+    <button class="evidence-marker growth-marker"
+            type="button"
+            onclick="discoverEvidence('growth')">
+
+        <span class="marker-pulse"></span>
+
+        <span class="marker-icon">🕸</span>
+
+        <span class="marker-label"
+              data-en="WOLFSBANE"
+              data-ar="نبات الذئب">
+            WOLFSBANE
+        </span>
+
+    </button>
+
+
+    <!-- ================= EVIDENCE TRAY ================= -->
+
+    <section class="evidence-tray">
+
+        <div class="tray-header">
+
+            <span data-en="RECOVERED EVIDENCE"
+                  data-ar="الأدلة المستخرجة">
+                RECOVERED EVIDENCE
+            </span>
+
+            <strong id="evidenceCount">0 / 4</strong>
+
+        </div>
+
+        <div id="evidenceSlots" class="evidence-slots">
+
+            <div class="empty-slot"></div>
+            <div class="empty-slot"></div>
+            <div class="empty-slot"></div>
+            <div class="empty-slot"></div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= OPEN CASE ================= -->
+
+    <button id="openCase"
+            class="open-case"
+            type="button">
+
+        <span>✦</span>
+
+        <span data-en="OPEN CASE FILE"
+              data-ar="فتح ملف القضية">
+            OPEN CASE FILE
+        </span>
+
+    </button>
+
+
+    <!-- ================= RETURN ================= -->
+
+    <button id="returnInvestigation"
+            class="return-button"
+            type="button"
+            onclick="window.location.href='investigation.html'">
+
+        ←
+
+        <span data-en="RETURN TO INVESTIGATION"
+              data-ar="العودة إلى التحقيق">
+            RETURN TO INVESTIGATION
+        </span>
+
+    </button>
+
+
+    <!-- ================================================= -->
+    <!-- ================= CASE OVERLAY ================== -->
+    <!-- ================================================= -->
+
+    <div id="caseOverlay" class="case-overlay">
+
+        <div class="paper-stack">
+
+            <article class="case-paper">
+
+                <button id="closeCase"
+                        class="close-case"
+                        type="button">
+                    ×
+                </button>
+
+
+                <!-- PAPER HEADER -->
+
+                <header class="paper-header">
+
+                    <div>
+                        <span class="paper-ministry">
+                            MINISTRY OF MAGIC
+                        </span>
+
+                        <span class="paper-department">
+                            DEPARTMENT OF MAGICAL INCIDENTS
+                        </span>
+                    </div>
+
+                    <div class="classified">
+                        CLASSIFIED
+                    </div>
+
+                </header>
+
+
+                <!-- META -->
+
+                <div class="paper-meta">
+
+                    <span>
+                        CASE 001-B
+                    </span>
+
+                    <span>
+                        PAGE 02
+                    </span>
+
+                    <span>
+                        GREENHOUSE 03
+                    </span>
+
+                </div>
+
+
+                <!-- TITLE -->
+
+                <div class="paper-title">
+
+                    <span data-en="CASE REPORT"
+                          data-ar="تقرير القضية">
+                        CASE REPORT
+                    </span>
+
+                    <h2 data-en="WOLFSBANE ANOMALY"
+                        data-ar="شذوذ نبات الذئب">
+                        WOLFSBANE ANOMALY
+                    </h2>
+
+                    <p data-en="MAGICAL BOTANY INVESTIGATION"
+                       data-ar="تحقيق في النباتات السحرية">
+                        MAGICAL BOTANY INVESTIGATION
+                    </p>
+
+                </div>
+
+
+                <!-- STATUS -->
+
+                <div class="status-strip">
+
+                    <span>
+                        CASE STATUS:
+                        <b data-en="ACTIVE"
+                           data-ar="نشطة">
+                            ACTIVE
+                        </b>
+                    </span>
+
+                    <span>
+                        LOCATION:
+                        <b>GREENHOUSE 03</b>
+                    </span>
+
+                    <span>
+                        THREAT:
+                        <b data-en="UNKNOWN"
+                           data-ar="غير معروف">
+                            UNKNOWN
+                        </b>
+                    </span>
+
+                </div>
+
+
+                <!-- ================= SECTION 01 ================= -->
+
+                <section class="paper-section">
+
+                    <div class="section-number">
+                        01
+                    </div>
+
+                    <div class="section-content">
+
+                        <h3 data-en="INCIDENT REPORT"
+                            data-ar="تقرير الحادثة">
+                            INCIDENT REPORT
+                        </h3>
+
+                        <p data-en="Greenhouse 03 was found in an abnormal magical state. Wolfsbane plants displayed accelerated growth while nearby magical energy appeared to weaken."
+                           data-ar="تم العثور على الدفيئة 03 في حالة سحرية غير طبيعية. أظهرت نباتات الذئب نموًا متسارعًا، بينما بدا أن الطاقة السحرية المحيطة بها تضعف.">
+                            Greenhouse 03 was found in an abnormal magical state. Wolfsbane plants displayed accelerated growth while nearby magical energy appeared to weaken.
+                        </p>
+
+                        <p class="handwritten-note"
+                           data-en="FIELD NOTE: The plant is not simply growing. It appears to be taking something."
+                           data-ar="ملاحظة ميدانية: النبات لا ينمو فقط... يبدو أنه يأخذ شيئًا ما.">
+                            FIELD NOTE: The plant is not simply growing. It appears to be taking something.
+                        </p>
+
+                    </div>
+
+                </section>
+
+
+                <!-- ================================================= -->
+                <!-- ================= ASTER CONNECTION ============== -->
+                <!-- ================================================= -->
+
+                <section class="aster-correlation">
+
+                    <div class="correlation-top">
+
+                        <div class="section-number">
+                            01-A
+                        </div>
+
+                        <div>
+
+                            <span class="correlation-label"
+                                  data-en="CROSS-CASE CORRELATION"
+                                  data-ar="ربط بين القضايا">
+                                CROSS-CASE CORRELATION
+                            </span>
+
+                            <h3 data-en="EVIDENCE FROM CASE 001-A"
+                                data-ar="دليل من القضية 001-A">
+                                EVIDENCE FROM CASE 001-A
+                            </h3>
+
+                        </div>
+
+                        <div class="correlation-stamp">
+                            LINKED
+                        </div>
+
+                    </div>
+
+
+                    <div class="aster-evidence-content">
+
+                        <div class="feather-frame">
+
+                            <img src="images/hippogriff-feather.png"
+                                 alt="Recovered Hippogriff feather">
+
+                            <div class="feather-mark">
+                                🕸
+                            </div>
+
+                            <span class="feather-caption"
+                                  data-en="RECOVERED FEATHER"
+                                  data-ar="ريشة مستخرجة">
+                                RECOVERED FEATHER
+                            </span>
+
+                        </div>
+
+
+                        <div class="correlation-text">
+
+                            <div class="case-reference">
+                                CASE 001-A
+                            </div>
+
+                            <p data-en="Recovered feather from CASE 001-A. The same web-like mark was detected on the feather and on the black metal fragment recovered from Greenhouse 03."
+                               data-ar="ريشة مستخرجة من القضية 001-A. تم رصد نفس العلامة الشبيهة بشبكة العنكبوت على الريشة وعلى القطعة المعدنية السوداء التي عُثر عليها في الدفيئة 03.">
+                                Recovered feather from CASE 001-A. The same web-like mark was detected on the feather and on the black metal fragment recovered from Greenhouse 03.
+                            </p>
+
+
+                            <div class="same-mark">
+
+                                <div class="mark-item">
+                                    <span>🕸</span>
+                                    <small data-en="ASTER FEATHER"
+                                           data-ar="ريشة أستر">
+                                        ASTER FEATHER
+                                    </small>
+                                </div>
+
+                                <div class="connection-line">
+                                    ─────────
+                                </div>
+
+                                <div class="mark-item">
+                                    <span>🕸</span>
+                                    <small data-en="BLACK METAL FRAGMENT"
+                                           data-ar="القطعة المعدنية السوداء">
+                                        BLACK METAL FRAGMENT
+                                    </small>
+                                </div>
+
+                            </div>
+
+
+                            <div class="investigator-note">
+
+                                <span data-en="INVESTIGATOR'S NOTE"
+                                      data-ar="ملاحظة المحقق">
+                                    INVESTIGATOR'S NOTE
+                                </span>
+
+                                <strong data-en="ASTER WAS NOT THE SOURCE. THE MARK CONNECTS THE INCIDENTS."
+                                        data-ar="أستر لم يكن مصدر الاضطراب. العلامة تربط بين الحادثتين.">
+                                    ASTER WAS NOT THE SOURCE. THE MARK CONNECTS THE INCIDENTS.
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- ================= SECTION 02 ================= -->
+
+                <section class="paper-section">
+
+                    <div class="section-number">
+                        02
+                    </div>
+
+                    <div class="section-content">
+
+                        <h3 data-en="RECOVERED EVIDENCE"
+                            data-ar="الأدلة المستخرجة">
+                            RECOVERED EVIDENCE
+                        </h3>
+
+                        <div id="paperEvidence"
+                             class="paper-evidence-grid">
+
+                            <!-- Generated by JavaScript -->
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- ================= SECTION 03 ================= -->
+
+                <section class="paper-section puzzle-section">
+
+                    <div class="section-number">
+                        03
+                    </div>
+
+                    <div class="section-content">
+
+                        <h3 data-en="INVESTIGATION PUZZLE"
+                            data-ar="لغز التحقيق">
+                            INVESTIGATION PUZZLE
+                        </h3>
+
+
+                        <div id="puzzleLocked"
+                             class="puzzle-locked">
+
+                            <div class="lock-icon">
+                                🔒
+                            </div>
+
+                            <p data-en="Recover all four pieces of evidence to unlock the symbol analysis."
+                               data-ar="استخرجي الأدلة الأربعة لفتح تحليل الرموز.">
+                                Recover all four pieces of evidence to unlock the symbol analysis.
+                            </p>
+
+                        </div>
+
+
+                        <div id="symbolPuzzle"
+                             class="symbol-puzzle hidden">
+
+                            <div class="puzzle-instruction">
+
+                                <span data-en="The recovered evidence points to four symbols."
+                                      data-ar="تشير الأدلة المستخرجة إلى أربعة رموز.">
+                                    The recovered evidence points to four symbols.
+                                </span>
+
+                                <small data-en="Identify the four symbols connected to the anomalies."
+                                       data-ar="حددي الرموز الأربعة المرتبطة بالشذوذ.">
+                                    Identify the four symbols connected to the anomalies.
+                                </small>
+
+                            </div>
+
+
+                            <div class="puzzle-progress">
+
+                                <span data-en="MATCHED SYMBOLS"
+                                      data-ar="الرموز المطابقة">
+                                    MATCHED SYMBOLS
+                                </span>
+
+                                <strong id="matchCount">
+                                    0 / 4
+                                </strong>
+
+                            </div>
+
+
+                            <div id="symbolGrid"
+                                 class="symbol-grid">
+
+                                <!-- Generated by JavaScript -->
+
+                            </div>
+
+
+                            <div id="puzzleMessage"
+                                 class="puzzle-message">
+                            </div>
+
+                        </div>
+
+
+                        <!-- ================= FINAL RESULT ================= -->
+
+                        <div id="finalResult"
+                             class="final-result hidden">
+
+                            <div class="success-stamp">
+                                ARCHIVE REFERENCE IDENTIFIED
+                            </div>
+
+                            <div class="code-display">
+                                03 — 17 — 04 — 09
+                            </div>
+
+                            <h4>
+                                THE OLD BOOK
+                            </h4>
+
+                            <p data-en="The symbol sequence corresponds to an archived Ministry reference."
+                               data-ar="يتطابق تسلسل الرموز مع مرجع محفوظ في أرشيف الوزارة.">
+                                The symbol sequence corresponds to an archived Ministry reference.
+                            </p>
+
+                            <div class="lead-message">
+
+                                <span data-en="NEXT LEAD"
+                                      data-ar="الدليل التالي">
+                                    NEXT LEAD
+                                </span>
+
+                                <strong data-en="THE OLD BOOK"
+                                        data-ar="الكتاب القديم">
+                                    THE OLD BOOK
+                                </strong>
+
+                            </div>
+
+                            <button id="finishBtn"
+                                    type="button"
+                                    data-en="CONTINUE INVESTIGATION →"
+                                    data-ar="متابعة التحقيق ←">
+                                CONTINUE INVESTIGATION →
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- FOOTER -->
+
+                <footer class="paper-footer">
+
+                    <span>
+                        MINISTRY ARCHIVE
+                    </span>
+
+                    <span>
+                        CASE 001-B
+                    </span>
+
+                    <span>
+                        CLASSIFICATION: RESTRICTED
+                    </span>
+
+                </footer>
+
+            </article>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================================================= -->
+    <!-- =============== DISCOVERY MODAL ================= -->
+    <!-- ================================================= -->
+
+    <div id="evidenceModal"
+         class="evidence-modal">
+
+        <div class="discovery-card">
+
+            <button id="closeEvidence"
+                    class="close-discovery"
+                    type="button">
+                ×
+            </button>
+
+
+            <div class="discovery-stamp">
+                EVIDENCE RECOVERED
+            </div>
+
+
+            <div id="discoverySymbol"
+                 class="discovery-symbol">
+            </div>
+
+
+            <div class="discovery-type"
+                 data-en="FIELD DISCOVERY"
+                 data-ar="اكتشاف ميداني">
+                FIELD DISCOVERY
+            </div>
+
+
+            <h2 id="discoveryTitle">
+            </h2>
+
+
+            <p id="discoveryText">
+            </p>
+
+
+            <div class="discovery-note">
+
+                <span data-en="RECORDED BY INVESTIGATOR"
+                      data-ar="تم تسجيله بواسطة المحقق">
+                    RECORDED BY INVESTIGATOR
+                </span>
+
+                <strong data-en="Evidence logged."
+                        data-ar="تم تسجيل الدليل.">
+                    Evidence logged.
+                </strong>
+
+            </div>
+
+
+            <button id="continueDiscovery"
+                    class="continue-discovery"
+                    type="button"
+                    data-en="ADD TO CASE FILE"
+                    data-ar="إضافة إلى ملف القضية">
+                ADD TO CASE FILE
+            </button>
+
+        </div>
+
+    </div>
+
+
+</main>
+
+
+<script src="greenhouse.js"></script>
+
+</body>
+</html>

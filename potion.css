@@ -1,0 +1,1086 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+
+body {
+    font-family: Georgia, "Times New Roman", serif;
+    background: #08090b;
+    color: #eee;
+}
+
+
+.potion-lab {
+    position: relative;
+
+    width: 100vw;
+    height: 100vh;
+
+    overflow: hidden;
+
+    background-image:
+        linear-gradient(
+            rgba(5, 7, 10, 0.18),
+            rgba(5, 7, 10, 0.35)
+        ),
+        url("images/potions-laboratory.png");
+
+    background-size: cover;
+    background-position: center;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.top-bar {
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 70px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 35px;
+
+    background: rgba(5, 7, 10, 0.82);
+
+    border-bottom:
+        1px solid rgba(210, 176, 90, 0.35);
+
+    z-index: 50;
+
+    letter-spacing: 2px;
+}
+
+
+.case-number {
+
+    color: #d7b866;
+
+    font-size: 13px;
+}
+
+
+.separator {
+
+    margin: 0 10px;
+
+    color: #777;
+}
+
+
+.department {
+
+    font-size: 12px;
+
+    color: #c8c8c8;
+}
+
+
+/* LANGUAGE */
+
+.language-switch {
+
+    display: flex;
+
+    gap: 6px;
+}
+
+
+.language-switch button {
+
+    background: transparent;
+
+    border:
+        1px solid rgba(255,255,255,0.25);
+
+    color: #aaa;
+
+    padding: 6px 11px;
+
+    cursor: pointer;
+
+    font-size: 11px;
+
+    transition: 0.25s;
+}
+
+
+.language-switch button:hover,
+.language-switch button.active {
+
+    color: #e5c978;
+
+    border-color: #d7b866;
+}
+
+
+/* =========================
+   EXPERIMENT TITLE
+========================= */
+
+.experiment-header {
+
+    position: absolute;
+
+    top: 105px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    z-index: 20;
+
+    text-align: center;
+}
+
+
+.experiment-header span {
+
+    font-size: 20px;
+
+    letter-spacing: 6px;
+
+    color: #e1c878;
+
+    text-shadow:
+        0 0 15px
+        rgba(225, 200, 120, 0.3);
+}
+
+
+/* =========================
+   INVESTIGATION NOTE
+========================= */
+
+.investigation-note {
+
+    position: absolute;
+
+    left: 35px;
+    top: 155px;
+
+    width: 245px;
+
+    padding: 17px 18px 20px;
+
+    background:
+        linear-gradient(
+            rgba(231, 221, 190, 0.97),
+            rgba(210, 199, 163, 0.97)
+        );
+
+    color: #27251f;
+
+    transform: rotate(-1.2deg);
+
+    box-shadow:
+        0 15px 35px rgba(0,0,0,0.5),
+        inset 0 0 30px
+        rgba(90,70,30,0.12);
+
+    z-index: 35;
+}
+
+
+.note-pin {
+
+    position: absolute;
+
+    top: -8px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 13px;
+    height: 13px;
+
+    border-radius: 50%;
+
+    background: #8b2020;
+
+    box-shadow:
+        0 2px 5px rgba(0,0,0,0.4);
+}
+
+
+.note-header {
+
+    padding-bottom: 9px;
+
+    border-bottom:
+        1px solid rgba(50,45,35,0.35);
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    color: #514a3b;
+}
+
+
+.note-content {
+
+    padding-top: 12px;
+}
+
+
+.note-content p {
+
+    font-size: 13px;
+
+    line-height: 1.55;
+
+    font-family:
+        "Segoe Print",
+        "Comic Sans MS",
+        cursive;
+}
+
+
+.ingredient-order {
+
+    margin-top: 14px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+}
+
+
+.ingredient-order div {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    font-size: 11px;
+}
+
+
+.ingredient-order span {
+
+    font-size: 9px;
+
+    color: #8a6b2b;
+}
+
+
+.ingredient-order strong {
+
+    font-weight: normal;
+}
+
+
+.note-divider {
+
+    width: 100%;
+    height: 1px;
+
+    margin: 14px 0;
+
+    background:
+        rgba(50,45,35,0.25);
+}
+
+
+.note-status {
+
+    margin-top: 13px;
+
+    padding: 7px;
+
+    border:
+        1px dashed rgba(65,55,35,0.45);
+
+    text-align: center;
+
+    font-size: 9px;
+
+    letter-spacing: 1.3px;
+
+    color: #665c4a;
+}
+
+
+/* =========================
+   INGREDIENTS
+========================= */
+
+.ingredient {
+
+    position: absolute;
+
+    width: 120px;
+
+    text-align: center;
+
+    cursor: grab;
+
+    user-select: none;
+
+    -webkit-user-select: none;
+
+    touch-action: none;
+
+    z-index: 40;
+
+    transition:
+        transform 0.25s ease,
+        opacity 0.25s ease;
+}
+
+
+.ingredient:active {
+
+    cursor: grabbing;
+}
+
+
+.ingredient img {
+
+    width: 100%;
+
+    max-height: 130px;
+
+    object-fit: contain;
+
+    pointer-events: none;
+
+    user-select: none;
+
+    -webkit-user-drag: none;
+
+    filter:
+        drop-shadow(
+            0 8px 12px
+            rgba(0,0,0,0.55)
+        );
+}
+
+
+.ingredient-label {
+
+    display: block;
+
+    margin-top: 4px;
+
+    font-size: 11px;
+
+    color: #ddd;
+
+    text-shadow:
+        0 2px 5px #000;
+}
+
+
+/* INGREDIENT POSITIONS */
+
+.ingredient-wolfsbane {
+
+    left: 25%;
+    bottom: 18%;
+}
+
+
+.ingredient-moonstone {
+
+    left: 37%;
+    bottom: 20%;
+}
+
+
+.ingredient-unicorn {
+
+    right: 30%;
+    bottom: 19%;
+}
+
+
+.ingredient-ashwinder {
+
+    right: 17%;
+    bottom: 20%;
+}
+
+
+/* =========================
+   CAULDRON
+========================= */
+
+.cauldron-container {
+
+    position: absolute;
+
+    left: 50%;
+    top: 52%;
+
+    transform:
+        translate(-50%, -50%);
+
+    width: 420px;
+    height: 420px;
+
+    z-index: 15;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+}
+
+
+.cauldron-image {
+
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transition:
+        opacity 0.5s ease;
+
+    filter:
+        drop-shadow(
+            0 20px 25px
+            rgba(0,0,0,0.65)
+        );
+}
+
+
+.cauldron-image.active {
+
+    opacity: 1;
+}
+
+
+/* =========================
+   STIRRING ROD
+========================= */
+
+.stirring-rod {
+
+    position: absolute;
+
+    width: 180px;
+
+    right: -40px;
+    bottom: 90px;
+
+    z-index: 60;
+
+    display: none;
+
+    cursor: grab;
+
+    user-select: none;
+
+    -webkit-user-select: none;
+
+    -webkit-user-drag: none;
+
+    touch-action: none;
+
+    pointer-events: auto;
+
+    transform:
+        translateX(0)
+        rotate(0deg);
+
+    transition:
+        transform 0.08s linear;
+
+    filter:
+        drop-shadow(
+            0 5px 8px
+            rgba(0,0,0,0.7)
+        );
+}
+
+
+.stirring-rod.active {
+
+    display: block;
+}
+
+
+.stirring-rod:active {
+
+    cursor: grabbing;
+}
+
+
+/* =========================
+   STIR MESSAGE
+========================= */
+
+.stir-message {
+
+    position: absolute;
+
+    left: 50%;
+    bottom: 12%;
+
+    transform:
+        translateX(-50%);
+
+    padding: 9px 18px;
+
+    background:
+        rgba(5,5,5,0.72);
+
+    border:
+        1px solid
+        rgba(210,176,90,0.35);
+
+    color: #d9c17a;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transition:
+        opacity 0.3s;
+
+    z-index: 70;
+}
+
+
+.stir-message.visible {
+
+    opacity: 1;
+}
+
+
+/* =========================
+   RESULT
+========================= */
+
+.experiment-result {
+
+    position: absolute;
+
+    left: 50%;
+    bottom: 9%;
+
+    transform:
+        translateX(-50%);
+
+    color: #e1c878;
+
+    font-size: 12px;
+
+    letter-spacing: 2px;
+
+    opacity: 0;
+
+    transition:
+        opacity 0.5s;
+
+    z-index: 70;
+}
+
+
+.experiment-result.visible {
+
+    opacity: 1;
+}
+
+
+/* =========================
+   RESET
+========================= */
+
+.reset-btn {
+
+    position: absolute;
+
+    bottom: 35px;
+    left: 35px;
+
+    padding: 9px 15px;
+
+    background:
+        rgba(10,10,10,0.75);
+
+    border:
+        1px solid
+        rgba(210,176,90,0.4);
+
+    color: #cbb46d;
+
+    font-family: Georgia, serif;
+
+    font-size: 10px;
+
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    z-index: 70;
+
+    transition: 0.25s;
+}
+
+
+.reset-btn:hover {
+
+    background:
+        rgba(210,176,90,0.12);
+
+    border-color: #d7b866;
+}
+
+
+/* =========================
+   CASE OVERLAY
+========================= */
+
+.case-overlay {
+
+    position: fixed;
+
+    inset: 0;
+
+    background:
+        rgba(0,0,0,0.72);
+
+    backdrop-filter: blur(5px);
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transition: 0.4s;
+
+    z-index: 100;
+}
+
+
+.case-overlay.open {
+
+    opacity: 1;
+
+    visibility: visible;
+}
+
+
+.case-file {
+
+    position: relative;
+
+    width:
+        min(650px, 90vw);
+
+    max-height: 85vh;
+
+    overflow-y: auto;
+
+    padding: 35px 42px;
+
+    background:
+        linear-gradient(
+            rgba(225,216,188,0.98),
+            rgba(204,193,159,0.98)
+        );
+
+    color: #27241d;
+
+    box-shadow:
+        0 25px 70px
+        rgba(0,0,0,0.7);
+
+    border:
+        1px solid
+        rgba(70,60,40,0.45);
+}
+
+
+/* CLOSE */
+
+.close-case {
+
+    position: absolute;
+
+    top: 12px;
+    right: 16px;
+
+    width: 32px;
+    height: 32px;
+
+    border: none;
+
+    background: transparent;
+
+    color: #403b31;
+
+    font-size: 27px;
+
+    cursor: pointer;
+
+    line-height: 1;
+}
+
+
+.close-case:hover {
+
+    color: #8b2020;
+}
+
+
+/* FILE */
+
+.file-top {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    padding-bottom: 12px;
+
+    border-bottom:
+        1px solid
+        rgba(50,45,35,0.35);
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+}
+
+
+.file-title {
+
+    margin-top: 25px;
+
+    font-size: 24px;
+
+    letter-spacing: 3px;
+}
+
+
+.file-subtitle {
+
+    margin-top: 7px;
+
+    font-size: 11px;
+
+    letter-spacing: 3px;
+
+    color: #7a1d1d;
+}
+
+
+.file-body {
+
+    margin-top: 22px;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+}
+
+
+.observation-block {
+
+    margin-top: 18px;
+}
+
+
+.observation-block > strong {
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+}
+
+
+.experiment-observation {
+
+    margin-top: 10px;
+
+    padding: 10px 13px;
+
+    border-left:
+        3px solid #766b52;
+}
+
+
+.experiment-observation span {
+
+    font-size: 10px;
+
+    letter-spacing: 1px;
+}
+
+
+.experiment-observation p {
+
+    margin-top: 3px;
+}
+
+
+.experiment-observation.anomaly {
+
+    border-left-color: #8b2020;
+}
+
+
+.stamp {
+
+    display: inline-block;
+
+    margin-top: 22px;
+
+    padding: 7px 12px;
+
+    border:
+        2px solid #8b2020;
+
+    color: #8b2020;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+    transform: rotate(-3deg);
+}
+
+
+.next-lead {
+
+    margin-top: 25px;
+
+    padding-top: 15px;
+
+    border-top:
+        1px solid
+        rgba(50,45,35,0.3);
+}
+
+
+.next-lead small {
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+}
+
+
+.next-lead h3 {
+
+    margin-top: 6px;
+
+    font-size: 15px;
+
+    letter-spacing: 1.5px;
+}
+
+
+.next-lead p {
+
+    margin-top: 8px;
+}
+
+
+.finish-btn {
+
+    margin-top: 25px;
+
+    padding: 12px 20px;
+
+    background: #29271f;
+
+    border: 1px solid #29271f;
+
+    color: #e4d59f;
+
+    font-family: Georgia, serif;
+
+    font-size: 10px;
+
+    letter-spacing: 1.5px;
+
+    cursor: pointer;
+
+    transition: 0.25s;
+}
+
+
+.finish-btn:hover {
+
+    background: #514a3b;
+}
+
+
+/* =========================
+   ARABIC
+========================= */
+
+body.arabic {
+
+    direction: rtl;
+}
+
+
+body.arabic .investigation-note {
+
+    direction: rtl;
+
+    transform:
+        rotate(1.2deg);
+}
+
+
+body.arabic .case-file {
+
+    direction: rtl;
+}
+
+
+body.arabic .file-top {
+
+    direction: rtl;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+
+    .investigation-note {
+
+        left: 18px;
+
+        width: 210px;
+    }
+
+
+    .cauldron-container {
+
+        width: 360px;
+        height: 360px;
+    }
+
+
+    .ingredient {
+
+        width: 95px;
+    }
+
+}
+
+
+@media (max-width: 650px) {
+
+    .investigation-note {
+
+        transform:
+            scale(0.82)
+            rotate(-1.2deg);
+
+        transform-origin:
+            top left;
+
+        left: 10px;
+        top: 110px;
+    }
+
+
+    .experiment-header {
+
+        top: 85px;
+    }
+
+
+    .cauldron-container {
+
+        width: 300px;
+        height: 300px;
+
+        top: 55%;
+    }
+
+
+    .ingredient {
+
+        width: 75px;
+    }
+
+
+    .ingredient-label {
+
+        font-size: 8px;
+    }
+
+
+    .ingredient-wolfsbane {
+
+        left: 5%;
+    }
+
+
+    .ingredient-moonstone {
+
+        left: 27%;
+    }
+
+
+    .ingredient-unicorn {
+
+        right: 26%;
+    }
+
+
+    .ingredient-ashwinder {
+
+        right: 5%;
+    }
+
+
+    .stirring-rod {
+
+        width: 130px;
+
+        right: -25px;
+    }
+
+}

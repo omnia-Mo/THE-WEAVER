@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Case 001-A | Aster</title>
+
+    <link rel="stylesheet" href="evidence.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         MINISTRY BAR
+    ========================== -->
+
+    <header class="ministry-bar">
+
+        <div class="ministry-left">
+
+            <span class="ministry-symbol">ϟ</span>
+
+            <span
+                data-en="MINISTRY OF MAGIC"
+                data-ar="وزارة السحر">
+                MINISTRY OF MAGIC
+            </span>
+
+        </div>
+
+
+        <div class="language-switcher">
+
+            <button id="enBtn">EN</button>
+
+            <span>|</span>
+
+            <button id="arBtn">AR</button>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =========================
+         FOREST SCENE
+    ========================== -->
+
+    <main class="forest-scene">
+
+        <div class="forest-overlay"></div>
+
+
+        <div class="case-info">
+
+            <span
+                data-en="CLASSIFIED"
+                data-ar="سري للغاية">
+                CLASSIFIED
+            </span>
+
+            <strong>CASE 001-A</strong>
+
+            <span
+                data-en="FORBIDDEN FOREST"
+                data-ar="الغابة المحرمة">
+                FORBIDDEN FOREST
+            </span>
+
+        </div>
+
+
+
+        <!-- ASTER -->
+
+        <div class="aster-title">
+
+            <h1>ASTER</h1>
+
+            <div class="aster-line"></div>
+
+        </div>
+
+
+
+        <!-- OPEN CASE -->
+
+        <button
+            class="case-file-button"
+            id="openCase">
+
+            <span class="folder-icon">▤</span>
+
+            <span
+                data-en="OPEN CASE FILE"
+                data-ar="فتح ملف القضية">
+                OPEN CASE FILE
+            </span>
+
+        </button>
+
+
+
+        <!-- RETURN BUTTON -->
+
+        <a
+            href="investigation.html"
+            class="return-btn">
+
+            <span
+                data-en="← Return"
+                data-ar="← العودة">
+                ← Return
+            </span>
+
+        </a>
+
+    </main>
+
+
+
+    <!-- =========================
+         CASE OVERLAY
+    ========================== -->
+
+    <div
+        class="case-overlay"
+        id="caseOverlay">
+
+        <div class="case-paper-wrapper">
+
+            <div class="paper-back paper-back-one"></div>
+
+            <div class="paper-back paper-back-two"></div>
+
+
+            <div class="case-paper">
+
+
+                <!-- CLOSE -->
+
+                <button
+                    class="close-case"
+                    id="closeCase">
+                    ×
+                </button>
+
+
+
+                <div class="paper-clip"></div>
+
+
+                <div
+                    class="classified-stamp"
+                    data-en="CLASSIFIED"
+                    data-ar="سري للغاية">
+                    CLASSIFIED
+                </div>
+
+
+
+                <!-- HEADER -->
+
+                <div class="paper-header">
+
+                    <div>
+
+                        <span
+                            class="small-label"
+                            data-en="MINISTRY OF MAGIC"
+                            data-ar="وزارة السحر">
+                            MINISTRY OF MAGIC
+                        </span>
+
+                        <h2
+                            data-en="MAGICAL INCIDENTS DEPARTMENT"
+                            data-ar="إدارة الحوادث السحرية">
+                            MAGICAL INCIDENTS DEPARTMENT
+                        </h2>
+
+                    </div>
+
+
+                    <div class="paper-page">
+                        CASE 001-A<br>
+                        PAGE 01
+                    </div>
+
+                </div>
+
+
+                <div class="paper-divider"></div>
+
+
+
+                <!-- CASE TITLE -->
+
+                <div class="case-heading">
+
+                    <span
+                        data-en="MAGICAL CREATURE ANOMALY"
+                        data-ar="حالة كائن سحري غير طبيعية">
+                        MAGICAL CREATURE ANOMALY
+                    </span>
+
+                    <h1>ASTER</h1>
+
+                    <p
+                        data-en="HIPPOGRIFF"
+                        data-ar="هيبوجريف">
+                        HIPPOGRIFF
+                    </p>
+
+                </div>
+
+
+
+                <!-- STATUS -->
+
+                <div class="status-strip">
+
+                    <div>
+
+                        <span
+                            data-en="CASE STATUS"
+                            data-ar="حالة القضية">
+                            CASE STATUS
+                        </span>
+
+                        <strong
+                            data-en="ACTIVE"
+                            data-ar="نشطة">
+                            ACTIVE
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span
+                            data-en="CREATURE STATUS"
+                            data-ar="حالة الكائن">
+                            CREATURE STATUS
+                        </span>
+
+                        <strong
+                            data-en="UNSTABLE"
+                            data-ar="غير مستقرة">
+                            UNSTABLE
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span
+                            data-en="THREAT LEVEL"
+                            data-ar="مستوى الخطورة">
+                            THREAT LEVEL
+                        </span>
+
+                        <strong
+                            data-en="CRITICAL"
+                            data-ar="حرج">
+                            CRITICAL
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- INFORMATION -->
+
+                <section class="paper-section">
+
+                    <div class="info-grid">
+
+                        <div>
+
+                            <span
+                                data-en="SUBJECT"
+                                data-ar="الكائن">
+                                SUBJECT
+                            </span>
+
+                            <strong>ASTER</strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <span
+                                data-en="SPECIES"
+                                data-ar="النوع">
+                                SPECIES
+                            </span>
+
+                            <strong
+                                data-en="HIPPOGRIFF"
+                                data-ar="هيبوجريف">
+                                HIPPOGRIFF
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <span
+                                data-en="LOCATION"
+                                data-ar="الموقع">
+                                LOCATION
+                            </span>
+
+                            <strong
+                                data-en="FORBIDDEN FOREST"
+                                data-ar="الغابة المحرمة">
+                                FORBIDDEN FOREST
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <span
+                                data-en="INCIDENT TIME"
+                                data-ar="وقت الحادث">
+                                INCIDENT TIME
+                            </span>
+
+                            <strong
+                                data-en="NIGHT OF DISTURBANCE"
+                                data-ar="ليلة الاضطراب">
+                                NIGHT OF DISTURBANCE
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- INCIDENT REPORT -->
+
+                <section class="paper-section">
+
+                    <h3
+                        data-en="INCIDENT REPORT"
+                        data-ar="تقرير الحادث">
+                        INCIDENT REPORT
+                    </h3>
+
+                    <p
+                        data-en="Aster, a resident Hippogriff of the Forbidden Forest, has displayed unusual behavior following the magical disturbance recorded at exactly 12:00 AM."
+                        data-ar="أستر، وهو هيبوجريف يعيش في الغابة المحرمة، أظهر سلوكًا غير معتاد بعد الاضطراب السحري الذي تم تسجيله في تمام الساعة 12:00 منتصف الليل.">
+                        Aster, a resident Hippogriff of the Forbidden Forest,
+                        has displayed unusual behavior following the magical
+                        disturbance recorded at exactly 12:00 AM.
+                    </p>
+
+                    <p
+                        data-en="The creature repeatedly refuses to fly and avoids approaching a specific area of the forest."
+                        data-ar="يرفض الكائن الطيران بشكل متكرر، ويتجنب الاقتراب من منطقة محددة داخل الغابة.">
+                        The creature repeatedly refuses to fly and avoids
+                        approaching a specific area of the forest.
+                    </p>
+
+                </section>
+
+
+
+                <!-- FIELD NOTE -->
+
+                <section class="field-note">
+
+                    <span
+                        class="note-label"
+                        data-en="FIELD NOTE"
+                        data-ar="ملاحظة ميدانية">
+                        FIELD NOTE
+                    </span>
+
+                    <p
+                        data-en="Aster's wings appear healthy. There are no visible signs of physical injury. The behavior seems defensive rather than physical."
+                        data-ar="تبدو أجنحة أستر سليمة. لا توجد أي علامات واضحة على إصابة جسدية. يبدو أن هذا السلوك دفاعي وليس ناتجًا عن إصابة.">
+                        "Aster's wings appear healthy.
+                        There are no visible signs of physical injury.
+                        The behavior seems defensive rather than physical."
+                    </p>
+
+                </section>
+
+
+
+                <!-- PHYSICAL EVIDENCE -->
+
+                <section class="paper-section">
+
+                    <h3
+                        data-en="PHYSICAL EVIDENCE"
+                        data-ar="الأدلة المادية">
+                        PHYSICAL EVIDENCE
+                    </h3>
+
+
+                    <div class="evidence-layout">
+
+                        <div class="feather-box">
+
+                            <img
+                                src="images/hippogriff-feather.png"
+                                alt="Hippogriff Feather"
+                                class="feather-image">
+
+                            <span class="evidence-number">
+                                E-001
+                            </span>
+
+                        </div>
+
+
+                        <div class="evidence-description">
+
+                            <h4
+                                data-en="RECOVERED FEATHER"
+                                data-ar="ريشة تم العثور عليها">
+                                RECOVERED FEATHER
+                            </h4>
+
+                            <p
+                                data-en="A feather was recovered from the area Aster repeatedly avoided."
+                                data-ar="تم العثور على ريشة في المنطقة التي كان أستر يتجنبها باستمرار.">
+                                A feather was recovered from the area Aster
+                                repeatedly avoided.
+                            </p>
+
+                            <p
+                                data-en="No physical markings are visible to the naked eye. Magical scanning, however, detected an unusual residue surrounding the feather."
+                                data-ar="لا توجد أي علامات مادية ظاهرة بالعين المجردة. لكن الفحص السحري كشف عن بقايا سحرية غير معتادة تحيط بالريشة.">
+                                No physical markings are visible to the naked eye.
+                                Magical scanning, however, detected an unusual
+                                residue surrounding the feather.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- INVESTIGATION -->
+
+                <section class="investigation-section">
+
+                    <div class="investigation-heading">
+
+                        <span
+                            data-en="MINISTRY INVESTIGATION"
+                            data-ar="تحقيق وزارة السحر">
+                            MINISTRY INVESTIGATION
+                        </span>
+
+                        <h3
+                            data-en="ASTER'S BEHAVIOR REPORT"
+                            data-ar="تقرير سلوك أستر">
+                            ASTER'S BEHAVIOR REPORT
+                        </h3>
+
+                        <p
+                            data-en="Verify the creature's behavior before continuing the investigation."
+                            data-ar="تحقق من سلوك الكائن قبل استكمال التحقيق.">
+                            Verify the creature's behavior before continuing
+                            the investigation.
+                        </p>
+
+                    </div>
+
+
+
+                    <!-- QUESTION 1 -->
+
+                    <div
+                        class="question-card"
+                        data-question="1">
+
+                        <div class="question-number">
+                            01
+                        </div>
+
+                        <h4
+                            data-en="What is the first thing you should do when approaching a Hippogriff?"
+                            data-ar="ما أول شيء يجب فعله عند الاقتراب من هيبوجريف؟">
+                            What is the first thing you should do when
+                            approaching a Hippogriff?
+                        </h4>
+
+
+                        <div class="answers">
+
+                            <button
+                                data-correct="false"
+                                data-en="Speak loudly to get its attention"
+                                data-ar="التحدث بصوت عالٍ لجذب انتباهه">
+                                Speak loudly to get its attention
+                            </button>
+
+                            <button
+                                data-correct="true"
+                                data-en="Bow respectfully and wait"
+                                data-ar="الانحناء باحترام والانتظار">
+                                Bow respectfully and wait
+                            </button>
+
+                            <button
+                                data-correct="false"
+                                data-en="Approach from behind"
+                                data-ar="الاقتراب منه من الخلف">
+                                Approach from behind
+                            </button>
+
+                            <button
+                                data-correct="false"
+                                data-en="Offer it a potion"
+                                data-ar="تقديم جرعة سحرية له">
+                                Offer it a potion
+                            </button>
+
+                        </div>
+
+                        <div class="question-result"></div>
+
+                    </div>
+
+
+
+                    <!-- QUESTION 2 -->
+
+                    <div
+                        class="question-card hidden-question"
+                        data-question="2">
+
+                        <div class="question-number">
+                            02
+                        </div>
+
+                        <h4
+                            data-en="Which combination best describes a Hippogriff?"
+                            data-ar="أي وصف يعبّر بشكل أدق عن هيبوجريف؟">
+                            Which combination best describes a Hippogriff?
+                        </h4>
+
+
+                        <div class="answers">
+
+                            <button
+                                data-correct="false"
+                                data-en="Lion's head and eagle's body"
+                                data-ar="رأس أسد وجسم نسر">
+                                Lion's head and eagle's body
+                            </button>
+
+                            <button
+                                data-correct="false"
+                                data-en="Horse's head and eagle's wings"
+                                data-ar="رأس حصان وأجنحة نسر">
+                                Horse's head and eagle's wings
+                            </button>
+
+                            <button
+                                data-correct="true"
+                                data-en="Eagle's head and wings with the body of a horse"
+                                data-ar="رأس وأجنحة نسر مع جسم حصان">
+                                Eagle's head and wings with the body of a horse
+                            </button>
+
+                            <button
+                                data-correct="false"
+                                data-en="Dragon's head and horse's body"
+                                data-ar="رأس تنين وجسم حصان">
+                                Dragon's head and horse's body
+                            </button>
+
+                        </div>
+
+                        <div class="question-result"></div>
+
+                    </div>
+
+
+
+                    <!-- QUESTION 3 -->
+
+                    <div
+                        class="question-card hidden-question"
+                        data-question="3">
+
+                        <div class="question-number">
+                            03
+                        </div>
+
+                        <h4
+                            data-en="What could unusual avoidance behavior in a Hippogriff indicate?"
+                            data-ar="ماذا يمكن أن يشير إليه سلوك الهيبوجريف غير المعتاد في تجنب مكان معين؟">
+                            What could unusual avoidance behavior in a Hippogriff indicate?
+                        </h4>
+
+
+                        <div class="answers">
+
+                            <button
+                                data-correct="false"
+                                data-en="It is preparing to migrate"
+                                data-ar="إنه يستعد للهجرة">
+                                It is preparing to migrate
+                            </button>
+
+                            <button
+                                data-correct="false"
+                                data-en="It has forgotten its training"
+                                data-ar="لقد نسي تدريبه">
+                                It has forgotten its training
+                            </button>
+
+                            <button
+                                data-correct="true"
+                                data-en="Something in its surroundings may be disturbing it"
+                                data-ar="قد يكون هناك شيء في محيطه يسبب له الاضطراب">
+                                Something in its surroundings may be disturbing it
+                            </button>
+
+                            <button
+                                data-correct="false"
+                                data-en="It is looking for food"
+                                data-ar="إنه يبحث عن الطعام">
+                                It is looking for food
+                            </button>
+
+                        </div>
+
+                        <div class="question-result"></div>
+
+                    </div>
+
+
+
+                    <!-- EVIDENCE CORRELATION -->
+
+                    <div
+                        class="evidence-correlation hidden-panel"
+                        id="evidenceCorrelation">
+
+                        <div class="success-symbol">
+                            ✓
+                        </div>
+
+                        <h3
+                            data-en="EVIDENCE CORRELATION COMPLETE"
+                            data-ar="اكتمل ربط الأدلة">
+                            EVIDENCE CORRELATION COMPLETE
+                        </h3>
+
+                        <p
+                            data-en="ASTER'S WINGS ARE HEALTHY."
+                            data-ar="أجنحة أستر سليمة.">
+                            ASTER'S WINGS ARE HEALTHY.
+                        </p>
+
+
+                        <div class="correlation-note">
+
+                            <p
+                                data-en="No physical injury was found."
+                                data-ar="لم يتم العثور على أي إصابة جسدية.">
+                                No physical injury was found.
+                            </p>
+
+                            <p
+                                data-en="Yet Aster repeatedly refuses to fly and avoids a specific area of the Forbidden Forest."
+                                data-ar="ومع ذلك، يرفض أستر الطيران باستمرار ويتجنب منطقة محددة من الغابة المحرمة.">
+                                Yet Aster repeatedly refuses to fly and avoids
+                                a specific area of the Forbidden Forest.
+                            </p>
+
+                            <p
+                                data-en="A trace of unusual magical residue was also detected on a recovered feather."
+                                data-ar="كما تم اكتشاف أثر سحري غير معتاد على ريشة تم العثور عليها.">
+                                A trace of unusual magical residue was also
+                                detected on a recovered feather.
+                            </p>
+
+                        </div>
+
+
+                        <div class="investigator-conclusion">
+
+                            <span
+                                data-en="INVESTIGATOR'S CONCLUSION"
+                                data-ar="استنتاج المحقق">
+                                INVESTIGATOR'S CONCLUSION
+                            </span>
+
+                            <strong
+                                data-en="The creature may not be the source of the disturbance."
+                                data-ar="قد لا يكون الكائن هو مصدر الاضطراب.">
+                                The creature may not be the source of the disturbance.
+                            </strong>
+
+                            <strong
+                                data-en="Something around it is."
+                                data-ar="بل هناك شيء في محيطه هو السبب.">
+                                Something around it is.
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- FINAL TRACE -->
+
+                    <div
+                        class="final-trace hidden-panel"
+                        id="finalTrace">
+
+                        <div
+                            class="trace-label"
+                            data-en="FINAL TRACE"
+                            data-ar="الأثر الأخير">
+                            FINAL TRACE
+                        </div>
+
+
+                        <h3
+                            data-en="THE TRAIL CONTINUES"
+                            data-ar="الأثر يستمر">
+                            THE TRAIL CONTINUES
+                        </h3>
+
+
+                        <div class="riddle">
+
+                            <p
+                                data-en="The creature is healthy."
+                                data-ar="الكائن سليم.">
+                                The creature is healthy.
+                            </p>
+
+                            <p
+                                data-en="The forest is not."
+                                data-ar="لكن الغابة ليست كذلك.">
+                                The forest is not.
+                            </p>
+
+                            <p
+                                data-en="Something beneath glass is calling the magic away."
+                                data-ar="هناك شيء تحت الزجاج يسحب السحر بعيدًا.">
+                                Something beneath glass is calling the magic away.
+                            </p>
+
+                        </div>
+
+
+                        <h4
+                            data-en="WHERE DOES THE TRAIL LEAD?"
+                            data-ar="إلى أين يقودنا الأثر؟">
+                            WHERE DOES THE TRAIL LEAD?
+                        </h4>
+
+
+                        <div class="location-input-area">
+
+                            <input
+                                type="text"
+                                id="locationInput"
+                                placeholder="ENTER LOCATION"
+                                autocomplete="off">
+
+                            <button
+                                id="submitLocation"
+                                data-en="SUBMIT"
+                                data-ar="تحقق">
+                                SUBMIT
+                            </button>
+
+                        </div>
+
+
+                        <div id="locationResult"></div>
+
+                    </div>
+
+
+
+                    <!-- NEXT LEAD -->
+
+                    <div
+                        class="next-lead hidden-panel"
+                        id="nextLead">
+
+                        <div class="lead-symbol">
+                            ✦
+                        </div>
+
+                        <span
+                            data-en="NEW LEAD IDENTIFIED"
+                            data-ar="تم تحديد دليل جديد">
+                            NEW LEAD IDENTIFIED
+                        </span>
+
+                        <h2>
+                            GREENHOUSE 03
+                        </h2>
+
+                        <p
+                            data-en="CASE 001-B HAS BEEN UNLOCKED"
+                            data-ar="تم فتح القضية 001-B">
+                            CASE 001-B HAS BEEN UNLOCKED
+                        </p>
+
+
+                        <button
+                            id="returnInvestigation"
+                            data-en="RETURN TO INVESTIGATION"
+                            data-ar="العودة إلى لوحة التحقيق">
+                            RETURN TO INVESTIGATION
+                        </button>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- FOOTER -->
+
+                <div class="paper-footer">
+
+                    <span
+                        data-en="MINISTRY OF MAGIC — CLASSIFIED RECORD"
+                        data-ar="وزارة السحر — سجل سري">
+                        MINISTRY OF MAGIC — CLASSIFIED RECORD
+                    </span>
+
+                    <span>
+                        CASE 001-A
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <script src="evidence.js"></script>
+
+</body>
+
+</html>

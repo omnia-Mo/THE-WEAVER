@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Balance Chamber | Case 001</title>
+
+
+    <!-- FONTS -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Noto+Naskh+Arabic:wght@400;500;600&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- CSS -->
+
+    <link
+        rel="stylesheet"
+        href="balance.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =================================================
+         BACKGROUND
+    ================================================== -->
+
+    <div class="background"></div>
+
+    <div class="dark-overlay"></div>
+
+
+    <!-- =================================================
+         LANGUAGE
+    ================================================== -->
+
+    <button
+        id="languageToggle"
+        class="language-button"
+    >
+        AR
+    </button>
+
+
+    <!-- =================================================
+         MAIN SCENE
+    ================================================== -->
+
+    <main class="scene">
+
+
+        <!-- =================================================
+             TITLE
+        ================================================== -->
+
+        <section
+            id="titleScene"
+            class="title-scene"
+        >
+
+            <div
+                class="case-label"
+                data-en="CASE FILE 001"
+                data-ar="ملف القضية 001"
+            >
+                CASE FILE 001
+            </div>
+
+
+            <h1
+                data-en="THE BALANCE CHAMBER"
+                data-ar="غرفة التوازن"
+            >
+                THE BALANCE CHAMBER
+            </h1>
+
+
+            <p
+                data-en="THE FOUNDERS HAVE ANSWERED."
+                data-ar="لقد استجاب المؤسسون."
+            >
+                THE FOUNDERS HAVE ANSWERED.
+            </p>
+
+        </section>
+
+
+
+        <!-- =================================================
+             MECHANISM
+        ================================================== -->
+
+        <section
+            id="mechanismScene"
+            class="mechanism-scene"
+        >
+
+            <div class="mechanism-wrapper">
+
+
+                <div
+                    id="mechanismGlow"
+                    class="mechanism-glow"
+                ></div>
+
+
+                <img
+                    src="images/balance-mechanism.png"
+                    class="balance-mechanism"
+                    alt="Balance Mechanism"
+                >
+
+            </div>
+
+
+            <div
+                id="statusText"
+                class="status-text"
+            >
+
+                <div
+                    class="status-main"
+                    data-en="BALANCE RESTORATION"
+                    data-ar="استعادة التوازن"
+                >
+                    BALANCE RESTORATION
+                </div>
+
+
+                <div
+                    class="status-sub"
+                    data-en="THE ANCIENT MECHANISM RESPONDS."
+                    data-ar="الآلية القديمة تستجيب."
+                >
+                    THE ANCIENT MECHANISM RESPONDS.
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             RESTORED
+        ================================================== -->
+
+        <section
+            id="restoredScene"
+            class="restored-scene"
+        >
+
+            <div
+                class="restored-line"
+                data-en="BALANCE RESTORED"
+                data-ar="تم استعادة التوازن"
+            >
+                BALANCE RESTORED
+            </div>
+
+
+            <h2
+                data-en="THE WEAVER HAS STOPPED."
+                data-ar="لقد توقف الويفر."
+            >
+                THE WEAVER HAS STOPPED.
+            </h2>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =================================================
+         FINAL BLACKOUT
+    ================================================== -->
+
+    <div
+        id="blackout"
+        class="blackout"
+    >
+
+        <div
+            id="finalMessage"
+            class="final-message"
+        >
+
+            <div
+                data-en="BUT SOMETHING ELSE WOKE UP."
+                data-ar="لكن شيئًا آخر قد استيقظ."
+            >
+                BUT SOMETHING ELSE WOKE UP.
+            </div>
+
+
+            <button
+                id="continueButton"
+                class="continue-button"
+                data-en="CONTINUE"
+                data-ar="متابعة"
+            >
+                CONTINUE
+            </button>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="balance.js"></script>
+
+</body>
+
+</html>

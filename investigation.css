@@ -1,0 +1,942 @@
+/* =========================================
+   INVESTIGATION BOARD
+   MINISTRY OF MAGIC — LEVEL BLACK
+========================================= */
+
+
+/* =========================================
+   RESET
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at 50% 15%,
+            rgba(75, 48, 135, 0.42),
+            transparent 38%
+        ),
+        radial-gradient(
+            circle at 85% 80%,
+            rgba(20, 65, 115, 0.28),
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #070b18,
+            #0b1022 45%,
+            #080b17
+        );
+
+    color: #eee9dc;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    overflow-x: hidden;
+}
+
+
+/* =========================================
+   MINISTRY BAR
+========================================= */
+
+.ministry-bar {
+
+    height: 76px;
+
+    padding: 0 5vw;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    border-bottom:
+        1px solid rgba(218, 181, 72, 0.28);
+
+    background:
+        rgba(5, 8, 19, 0.82);
+
+    backdrop-filter: blur(10px);
+
+}
+
+
+/* =========================================
+   MINISTRY NAME
+========================================= */
+
+.ministry-name {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+
+    letter-spacing: 2px;
+
+    color: #e7ddc2;
+
+}
+
+
+.ministry-name span {
+
+    font-size: 15px;
+
+}
+
+
+.ministry-name small {
+
+    font-family: Arial, sans-serif;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    color: #8f91a1;
+
+}
+
+
+/* =========================================
+   LANGUAGE SWITCHER
+========================================= */
+
+.language-switcher {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 11px;
+
+}
+
+
+.language-switcher button {
+
+    border: none;
+
+    background: transparent;
+
+    color: #666b7d;
+
+    cursor: pointer;
+
+    font-size: 11px;
+
+    letter-spacing: 1px;
+
+    padding: 5px;
+
+    transition: 0.3s;
+
+}
+
+
+.language-switcher button:hover {
+
+    color: #ded5bb;
+
+}
+
+
+.language-switcher button.active {
+
+    color: #d8b957;
+
+    text-shadow:
+        0 0 12px rgba(216, 185, 87, 0.3);
+
+}
+
+
+.language-switcher span {
+
+    color: #3f4352;
+
+}
+
+
+/* =========================================
+   MAIN PAGE
+========================================= */
+
+.investigation-page {
+
+    width: min(1200px, 90%);
+
+    margin: auto;
+
+    padding: 65px 0 50px;
+
+}
+
+
+/* =========================================
+   CLASSIFICATION
+========================================= */
+
+.classification {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-bottom: 24px;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 10px;
+
+    letter-spacing: 3px;
+
+    color: #c7aa59;
+
+}
+
+
+.classification span:first-child {
+
+    color: #d35c66;
+
+    text-shadow:
+        0 0 12px rgba(211, 92, 102, 0.2);
+
+}
+
+
+/* =========================================
+   INVESTIGATION HEADING
+========================================= */
+
+.investigation-heading {
+
+    text-align: center;
+
+}
+
+
+.case-label {
+
+    display: block;
+
+    margin-bottom: 16px;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 11px;
+
+    letter-spacing: 4px;
+
+    color: #b59c59;
+
+}
+
+
+.investigation-heading h1 {
+
+    font-size:
+        clamp(32px, 5vw, 64px);
+
+    font-weight: normal;
+
+    letter-spacing: 5px;
+
+    color: #f1dfaa;
+
+    text-shadow:
+        0 2px 25px rgba(218, 181, 72, 0.18);
+
+}
+
+
+.investigation-heading p {
+
+    margin-top: 18px;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 13px;
+
+    letter-spacing: 1px;
+
+    color: #8e91a2;
+
+}
+
+
+/* =========================================
+   STATUS BAR
+========================================= */
+
+.status-bar {
+
+    margin-top: 55px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    border-top:
+        1px solid rgba(218, 181, 72, 0.20);
+
+    border-bottom:
+        1px solid rgba(218, 181, 72, 0.20);
+
+    background:
+        rgba(9, 13, 28, 0.35);
+
+}
+
+
+.status-item {
+
+    min-height: 95px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 10px;
+
+    border-right:
+        1px solid rgba(218, 181, 72, 0.10);
+
+}
+
+
+.status-item:last-child {
+
+    border-right: none;
+
+}
+
+
+.status-item span {
+
+    font-family: Arial, sans-serif;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    color: #777d91;
+
+}
+
+
+.status-item strong {
+
+    font-family: Arial, sans-serif;
+
+    font-size: 14px;
+
+    letter-spacing: 3px;
+
+    color: #d8c47c;
+
+}
+
+
+.status-item strong.critical {
+
+    color: #e05b65;
+
+    text-shadow:
+        0 0 15px rgba(224, 91, 101, 0.25);
+
+}
+
+
+/* =========================================
+   CASES SECTION
+========================================= */
+
+.cases-section {
+
+    margin-top: 55px;
+
+}
+
+
+.section-title {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    margin-bottom: 22px;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 10px;
+
+    letter-spacing: 3px;
+
+    color: #a99b6d;
+
+}
+
+
+.section-title .line {
+
+    height: 1px;
+
+    flex: 1;
+
+    background:
+        rgba(218, 181, 72, 0.18);
+
+}
+
+
+/* =========================================
+   CASE GRID
+========================================= */
+
+.case-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 16px;
+
+}
+
+
+/* =========================================
+   CASE CARD
+========================================= */
+
+.case-card {
+
+    min-height: 270px;
+
+    position: relative;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    padding: 25px;
+
+    text-decoration: none;
+
+    color: inherit;
+
+    background:
+
+        radial-gradient(
+            circle at 85% 15%,
+            rgba(91, 59, 155, 0.18),
+            transparent 35%
+        ),
+
+        linear-gradient(
+            145deg,
+            #151b35,
+            #0d1328 55%,
+            #10152b
+        );
+
+    border:
+        1px solid rgba(176, 148, 67, 0.22);
+
+    box-shadow:
+
+        0 15px 35px rgba(0, 0, 0, 0.35),
+
+        inset 0 0 40px
+        rgba(75, 53, 130, 0.08);
+
+    transition:
+
+        transform 0.35s ease,
+
+        border-color 0.35s ease,
+
+        box-shadow 0.35s ease;
+
+}
+
+
+/* =========================================
+   OPEN CASE
+========================================= */
+
+.open-case {
+
+    cursor: pointer;
+
+}
+
+
+.open-case:hover {
+
+    transform:
+        translateY(-6px);
+
+    border-color:
+        rgba(221, 190, 91, 0.65);
+
+    box-shadow:
+
+        0 18px 45px
+        rgba(0, 0, 0, 0.5),
+
+        0 0 25px
+        rgba(115, 75, 190, 0.12),
+
+        inset 0 0 35px
+        rgba(221, 190, 91, 0.05);
+
+}
+
+
+/* =========================================
+   LOCKED CASE
+========================================= */
+
+.locked-case {
+
+    opacity: 0.52;
+
+    cursor: not-allowed;
+
+    background:
+
+        linear-gradient(
+            145deg,
+            #11162b,
+            #0b1020
+        );
+
+    filter:
+        saturate(0.7);
+
+}
+
+
+.locked-case::after {
+
+    content: "CLASSIFIED";
+
+    position: absolute;
+
+    top: 50%;
+
+    left: 50%;
+
+    transform:
+        translate(-50%, -50%)
+        rotate(-12deg);
+
+    padding: 8px 16px;
+
+    color:
+        rgba(190, 72, 80, 0.58);
+
+    border:
+        1px solid
+        rgba(190, 72, 80, 0.38);
+
+    font-family: Arial, sans-serif;
+
+    font-size: 9px;
+
+    letter-spacing: 3px;
+
+}
+
+
+/* =========================================
+   CARD TOP
+========================================= */
+
+.card-top {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+}
+
+
+.case-number {
+
+    font-family: Arial, sans-serif;
+
+    font-size: 10px;
+
+    letter-spacing: 3px;
+
+    color: #b5a875;
+
+}
+
+
+.case-state {
+
+    font-family: Arial, sans-serif;
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+
+    color: #9caf86;
+
+}
+
+
+.lock {
+
+    font-size: 13px;
+
+    opacity: 0.65;
+
+}
+
+
+/* =========================================
+   CARD CONTENT
+========================================= */
+
+.card-content {
+
+    padding: 20px 0;
+
+}
+
+
+.case-type {
+
+    font-family: Arial, sans-serif;
+
+    font-size: 8px;
+
+    letter-spacing: 3px;
+
+    color: #7f849a;
+
+}
+
+
+.card-content h2 {
+
+    margin-top: 13px;
+
+    font-size:
+        clamp(30px, 4vw, 48px);
+
+    font-weight: normal;
+
+    letter-spacing: 6px;
+
+    color: #f0e5c5;
+
+    text-shadow:
+        0 0 18px
+        rgba(212, 176, 75, 0.12);
+
+}
+
+
+.card-content p {
+
+    margin-top: 6px;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 11px;
+
+    color: #8e93a5;
+
+}
+
+
+/* =========================================
+   CARD BOTTOM
+========================================= */
+
+.card-bottom {
+
+    padding-top: 17px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    border-top:
+        1px solid
+        rgba(218, 181, 72, 0.11);
+
+    font-family: Arial, sans-serif;
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+
+    color: #777d91;
+
+}
+
+
+/* =========================================
+   STATUS LABELS
+========================================= */
+
+.status {
+
+    padding: 4px 8px;
+
+    border:
+        1px solid currentColor;
+
+}
+
+
+.status.unstable {
+
+    color: #d5b85f;
+
+}
+
+
+.status.mutated {
+
+    color: #c96b63;
+
+}
+
+
+.status.unknown {
+
+    color: #9c8bd0;
+
+}
+
+
+/* =========================================
+   BOTTOM AUTHORIZATION
+========================================= */
+
+.enter-section {
+
+    margin-top: 65px;
+
+    text-align: center;
+
+}
+
+
+.warning-line {
+
+    width: 100%;
+
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(218, 181, 72, 0.25),
+            transparent
+        );
+
+}
+
+
+.enter-section p {
+
+    margin-top: 20px;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 8px;
+
+    letter-spacing: 4px;
+
+    color: #686d80;
+
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+
+    width: 90%;
+
+    margin: auto;
+
+    padding: 22px 0 28px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+
+    color: #555b70;
+
+}
+
+
+/* =========================================
+   ARABIC
+========================================= */
+
+body.arabic {
+
+    font-family:
+        Tahoma,
+        Arial,
+        sans-serif;
+
+}
+
+
+body.arabic .ministry-name,
+body.arabic .investigation-heading,
+body.arabic .case-card,
+body.arabic .status-bar,
+body.arabic footer {
+
+    letter-spacing: 0;
+
+}
+
+
+body.arabic .investigation-heading h1 {
+
+    letter-spacing: 1px;
+
+}
+
+
+body.arabic .card-content h2 {
+
+    letter-spacing: 2px;
+
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 700px) {
+
+    .ministry-bar {
+
+        padding: 0 20px;
+
+    }
+
+
+    .investigation-page {
+
+        width: 92%;
+
+        padding-top: 40px;
+
+    }
+
+
+    .status-bar {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .status-item {
+
+        border-right: none;
+
+        border-bottom:
+            1px solid
+            rgba(218, 181, 72, 0.12);
+
+    }
+
+
+    .status-item:last-child {
+
+        border-bottom: none;
+
+    }
+
+
+    .case-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .case-card {
+
+        min-height: 240px;
+
+    }
+
+
+    footer {
+
+        width: 92%;
+
+        flex-direction: column;
+
+        gap: 8px;
+
+    }
+
+}

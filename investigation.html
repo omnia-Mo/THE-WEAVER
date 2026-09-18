@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Investigation | Case 001</title>
+
+    <link rel="stylesheet" href="investigation.css">
+</head>
+
+<body>
+
+    <!-- =========================================
+         TOP MINISTRY BAR
+    ========================================== -->
+
+    <header class="ministry-bar">
+
+        <div class="ministry-name">
+
+            <span
+                data-en="MINISTRY OF MAGIC"
+                data-ar="وزارة السحر">
+                MINISTRY OF MAGIC
+            </span>
+
+            <small
+                data-en="DEPARTMENT OF MAGICAL EMERGENCIES"
+                data-ar="قسم الطوارئ السحرية">
+                DEPARTMENT OF MAGICAL EMERGENCIES
+            </small>
+
+        </div>
+
+
+        <div class="language-switcher">
+
+            <button
+                id="englishBtn"
+                class="active"
+                type="button">
+                EN
+            </button>
+
+            <span>/</span>
+
+            <button
+                id="arabicBtn"
+                type="button">
+                AR
+            </button>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =========================================
+         MAIN INVESTIGATION BOARD
+    ========================================== -->
+
+    <main class="investigation-page">
+
+
+        <!-- CLASSIFICATION -->
+
+        <div class="classification">
+
+            <span
+                data-en="CLASSIFIED"
+                data-ar="سري للغاية">
+                CLASSIFIED
+            </span>
+
+            <span>//</span>
+
+            <span
+                data-en="LEVEL BLACK"
+                data-ar="المستوى الأسود">
+                LEVEL BLACK
+            </span>
+
+        </div>
+
+
+
+        <!-- CASE HEADING -->
+
+        <section class="investigation-heading">
+
+            <span
+                class="case-label"
+                data-en="CASE FILE 001"
+                data-ar="ملف القضية 001">
+                CASE FILE 001
+            </span>
+
+            <h1
+                data-en="MAGICAL DISTURBANCE DETECTED"
+                data-ar="تم رصد اضطراب سحري">
+                MAGICAL DISTURBANCE DETECTED
+            </h1>
+
+            <p
+                data-en="Something has changed in the magical world."
+                data-ar="لقد حدث شيء ما في العالم السحري.">
+                Something has changed in the magical world.
+            </p>
+
+        </section>
+
+
+
+        <!-- =========================================
+             STATUS
+        ========================================== -->
+
+        <section class="status-bar">
+
+            <div class="status-item">
+
+                <span
+                    data-en="CASE STATUS"
+                    data-ar="حالة القضية">
+                    CASE STATUS
+                </span>
+
+                <strong
+                    data-en="ACTIVE"
+                    data-ar="نشطة">
+                    ACTIVE
+                </strong>
+
+            </div>
+
+
+            <div class="status-item">
+
+                <span
+                    data-en="THREAT LEVEL"
+                    data-ar="مستوى التهديد">
+                    THREAT LEVEL
+                </span>
+
+                <strong
+                    class="critical"
+                    data-en="CRITICAL"
+                    data-ar="حرج">
+                    CRITICAL
+                </strong>
+
+            </div>
+
+
+            <!-- MAGICAL STABILITY -->
+
+            <div class="status-item">
+
+                <span
+                    data-en="MAGICAL STABILITY"
+                    data-ar="استقرار السحر">
+                    MAGICAL STABILITY
+                </span>
+
+                <strong
+                    id="stabilityValue"
+                    class="stability-value">
+                    43%
+                </strong>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================================
+             CASES
+        ========================================== -->
+
+        <section class="cases-section">
+
+            <div class="section-title">
+
+                <span
+                    data-en="ACTIVE INVESTIGATIONS"
+                    data-ar="التحقيقات النشطة">
+                    ACTIVE INVESTIGATIONS
+                </span>
+
+                <span class="line"></span>
+
+            </div>
+
+
+
+            <div class="case-grid">
+
+
+                <!-- =================================
+                     CASE A — ASTER
+                ================================== -->
+
+                <a
+                    href="evidence.html"
+                    id="asterCase"
+                    class="case-card open-case">
+
+                    <div class="card-top">
+
+                        <span class="case-number">
+                            001-A
+                        </span>
+
+                        <span
+                            class="case-state"
+                            data-en="OPEN"
+                            data-ar="مفتوحة">
+                            OPEN
+                        </span>
+
+                    </div>
+
+
+                    <div class="card-content">
+
+                        <span
+                            class="case-type"
+                            data-en="CREATURE ANOMALY"
+                            data-ar="اضطراب في الكائنات">
+                            CREATURE ANOMALY
+                        </span>
+
+                        <h2>ASTER</h2>
+
+                        <p
+                            data-en="Hippogriff"
+                            data-ar="هيبوجريف">
+                            Hippogriff
+                        </p>
+
+                    </div>
+
+
+                    <div class="card-bottom">
+
+                        <span
+                            data-en="FORBIDDEN FOREST"
+                            data-ar="الغابة المحرمة">
+                            FORBIDDEN FOREST
+                        </span>
+
+                        <span
+                            class="status unstable"
+                            data-en="UNSTABLE"
+                            data-ar="غير مستقر">
+                            UNSTABLE
+                        </span>
+
+                    </div>
+
+                </a>
+
+
+
+                <!-- =================================
+                     CASE B — WOLFSBANE
+                ================================== -->
+
+                <a
+                    href="greenhouse.html"
+                    id="greenhouseCase"
+                    class="case-card locked-case">
+
+                    <div class="card-top">
+
+                        <span class="case-number">
+                            001-B
+                        </span>
+
+                        <span
+                            id="greenhouseState"
+                            class="lock">
+                            🔒
+                        </span>
+
+                    </div>
+
+
+                    <div class="card-content">
+
+                        <span
+                            class="case-type"
+                            data-en="PLANT ANOMALY"
+                            data-ar="اضطراب نباتي">
+                            PLANT ANOMALY
+                        </span>
+
+                        <h2>WOLFSBANE</h2>
+
+                        <p
+                            data-en="Magical Plant"
+                            data-ar="نبات سحري">
+                            Magical Plant
+                        </p>
+
+                    </div>
+
+
+                    <div class="card-bottom">
+
+                        <span
+                            data-en="GREENHOUSE 03"
+                            data-ar="الصوبة رقم 03">
+                            GREENHOUSE 03
+                        </span>
+
+                        <span
+                            id="greenhouseStatus"
+                            class="status mutated"
+                            data-en="MUTATED"
+                            data-ar="متحور">
+                            MUTATED
+                        </span>
+
+                    </div>
+
+                </a>
+
+
+
+                <!-- =================================
+                     CASE C — LUMOS
+                ================================== -->
+
+                <a
+                    href="lumos.html"
+                    id="lumosCase"
+                    class="case-card locked-case">
+
+                    <div class="card-top">
+
+                        <span class="case-number">
+                            001-C
+                        </span>
+
+                        <span
+                            id="lumosState"
+                            class="lock">
+                            🔒
+                        </span>
+
+                    </div>
+
+
+                    <div class="card-content">
+
+                        <span
+                            class="case-type"
+                            data-en="SPELL ANOMALY"
+                            data-ar="اضطراب تعويذة">
+                            SPELL ANOMALY
+                        </span>
+
+                        <h2>LUMOS</h2>
+
+                        <p
+                            data-en="Spell Department"
+                            data-ar="قسم التعويذات">
+                            Spell Department
+                        </p>
+
+                    </div>
+
+
+                    <div class="card-bottom">
+
+                        <span
+                            data-en="SPELL DEPARTMENT"
+                            data-ar="قسم التعويذات">
+                            SPELL DEPARTMENT
+                        </span>
+
+                        <span
+                            class="case-status status unstable"
+                            data-en="UNSTABLE"
+                            data-ar="غير مستقر">
+                            UNSTABLE
+                        </span>
+
+                    </div>
+
+                </a>
+
+
+
+                <!-- =================================
+                     CASE D — POTION
+                ================================== -->
+
+                <a
+                    href="potion.html"
+                    id="potionCase"
+                    class="case-card locked-case">
+
+                    <div class="card-top">
+
+                        <span class="case-number">
+                            001-D
+                        </span>
+
+                        <span
+                            id="potionState"
+                            class="lock">
+                            🔒
+                        </span>
+
+                    </div>
+
+
+                    <div class="card-content">
+
+                        <span
+                            class="case-type"
+                            data-en="POTION ANOMALY"
+                            data-ar="اضطراب في الجرعات">
+                            POTION ANOMALY
+                        </span>
+
+                        <h2>POTION</h2>
+
+                        <p
+                            data-en="Laboratory"
+                            data-ar="المعمل">
+                            Laboratory
+                        </p>
+
+                    </div>
+
+
+                    <div class="card-bottom">
+
+                        <span
+                            data-en="POTIONS LAB"
+                            data-ar="معمل الجرعات">
+                            POTIONS LAB
+                        </span>
+
+                        <span
+                            class="case-status status unknown"
+                            data-en="UNKNOWN"
+                            data-ar="غير معروف">
+                            UNKNOWN
+                        </span>
+
+                    </div>
+
+                </a>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================================
+             AUTHORIZATION
+        ========================================== -->
+
+        <section class="enter-section">
+
+            <div class="warning-line"></div>
+
+            <p
+                data-en="AUTHORIZED PERSONNEL ONLY"
+                data-ar="للمصرح لهم فقط">
+                AUTHORIZED PERSONNEL ONLY
+            </p>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =========================================
+         FOOTER
+    ========================================== -->
+
+    <footer>
+
+        <span
+            data-en="MINISTRY EYES ONLY"
+            data-ar="للاستخدام الوزاري فقط">
+            MINISTRY EYES ONLY
+        </span>
+
+        <span>
+            CASE 001
+        </span>
+
+    </footer>
+
+
+
+    <script src="investigation.js"></script>
+
+</body>
+
+</html>

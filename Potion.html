@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Potions Lab | Case 001-D</title>
+
+    <link rel="stylesheet" href="potion.css">
+</head>
+
+<body>
+
+<div class="potion-lab">
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="top-bar">
+
+        <div>
+            <span class="case-number">CASE 001-D</span>
+            <span class="separator">|</span>
+            <span class="department">POTIONS LAB</span>
+        </div>
+
+        <div class="language-switch">
+            <button id="enBtn" class="active">EN</button>
+            <button id="arBtn">AR</button>
+        </div>
+
+    </header>
+
+
+    <!-- ================= EXPERIMENT TITLE ================= -->
+
+    <section class="experiment-header">
+
+        <span id="experimentLabel">
+            EXPERIMENT I
+        </span>
+
+    </section>
+
+
+    <!-- ================= SIDE NOTE ================= -->
+
+    <aside class="investigation-note">
+
+        <div class="note-pin"></div>
+
+        <div class="note-header">
+            <span id="noteTitle">
+                INVESTIGATION NOTE
+            </span>
+        </div>
+
+        <div class="note-content">
+
+            <p id="noteInstruction">
+                Drag each ingredient into the cauldron.
+            </p>
+
+            <div class="ingredient-order">
+
+                <div>
+                    <span>01</span>
+                    <strong id="name1">Wolfsbane</strong>
+                </div>
+
+                <div>
+                    <span>02</span>
+                    <strong id="name2">Moonstone</strong>
+                </div>
+
+                <div>
+                    <span>03</span>
+                    <strong id="name3">Unicorn Hair</strong>
+                </div>
+
+                <div>
+                    <span>04</span>
+                    <strong id="name4">Ashwinder Egg</strong>
+                </div>
+
+            </div>
+
+            <div class="note-divider"></div>
+
+            <p id="noteStir">
+                Once all ingredients are added, stir the potion from left to right.
+            </p>
+
+            <div
+                class="note-status"
+                id="noteStatus">
+                AWAITING INGREDIENTS
+            </div>
+
+        </div>
+
+    </aside>
+
+
+    <!-- ================= INGREDIENTS ================= -->
+
+    <div
+        class="ingredient ingredient-wolfsbane"
+        data-name="wolfsbane">
+
+        <img
+            src="images/wolfsbane-plant.png"
+            draggable="false">
+
+        <span
+            class="ingredient-label"
+            id="labelWolfsbane">
+            Wolfsbane
+        </span>
+
+    </div>
+
+
+    <div
+        class="ingredient ingredient-moonstone"
+        data-name="moonstone">
+
+        <img
+            src="images/moonstone.png"
+            draggable="false">
+
+        <span
+            class="ingredient-label"
+            id="labelMoonstone">
+            Moonstone
+        </span>
+
+    </div>
+
+
+    <div
+        class="ingredient ingredient-unicorn"
+        data-name="unicorn">
+
+        <img
+            src="images/unicorn-hair.png"
+            draggable="false">
+
+        <span
+            class="ingredient-label"
+            id="labelUnicorn">
+            Unicorn Hair
+        </span>
+
+    </div>
+
+
+    <div
+        class="ingredient ingredient-ashwinder"
+        data-name="ashwinder">
+
+        <img
+            src="images/ashwinder-egg.png"
+            draggable="false">
+
+        <span
+            class="ingredient-label"
+            id="labelAshwinder">
+            Ashwinder Egg
+        </span>
+
+    </div>
+
+
+    <!-- ================= CAULDRON ================= -->
+
+    <div
+        class="cauldron-container"
+        id="cauldron">
+
+        <!-- EMPTY -->
+
+        <img
+            id="cauldronEmpty"
+            class="cauldron-image active"
+            src="images/cauldron-empty.png"
+            draggable="false">
+
+
+        <!-- EXPERIMENT I -->
+
+        <img
+            id="cauldronSpell1"
+            class="cauldron-image"
+            src="images/cauldron-spell1.png"
+            draggable="false">
+
+
+        <!-- EXPERIMENT II -->
+
+        <img
+            id="cauldronSpell2"
+            class="cauldron-image"
+            src="images/cauldron-spell2.png"
+            draggable="false">
+
+
+        <!-- STIRRING ROD -->
+
+        <img
+            id="stirringRod"
+            class="stirring-rod"
+            src="images/stirring-rod.png"
+            draggable="false">
+
+    </div>
+
+
+    <!-- ================= STIR MESSAGE ================= -->
+
+    <div
+        class="stir-message"
+        id="stirMessage">
+
+        STIR FROM LEFT TO RIGHT
+
+    </div>
+
+
+    <!-- ================= RESULT ================= -->
+
+    <div
+        class="experiment-result"
+        id="experimentResult">
+
+        <span id="resultText"></span>
+
+    </div>
+
+
+    <!-- ================= RESET ================= -->
+
+    <button
+        id="resetExperiment"
+        class="reset-btn">
+
+        RESET EXPERIMENT
+
+    </button>
+
+
+    <!-- ================= CASE FILE ================= -->
+
+    <div
+        class="case-overlay"
+        id="caseOverlay">
+
+        <div class="case-file">
+
+            <button
+                class="close-case"
+                id="closeCase">
+
+                ×
+
+            </button>
+
+
+            <div class="file-top">
+
+                <span id="fileMinistry">
+                    MINISTRY OF MAGIC
+                </span>
+
+                <span>
+                    CASE 001-D
+                </span>
+
+            </div>
+
+
+            <div
+                class="file-title"
+                id="fileTitle">
+
+                MAGICAL ANOMALY DETECTED
+
+            </div>
+
+
+            <div
+                class="file-subtitle"
+                id="fileSubtitle">
+
+                POTION INSTABILITY
+
+            </div>
+
+
+            <div class="file-body">
+
+                <p id="fileIntro">
+
+                    Two controlled experiments were performed
+                    using identical ingredients, quantities,
+                    and procedure.
+
+                </p>
+
+
+                <div class="observation-block">
+
+                    <strong id="observationTitle">
+                        OBSERVATION
+                    </strong>
+
+
+                    <div class="experiment-observation">
+
+                        <span id="experimentOneTitle">
+                            EXPERIMENT I — STABLE
+                        </span>
+
+                        <p id="experimentOneText">
+
+                            The potion remained stable
+                            and reacted normally.
+
+                        </p>
+
+                    </div>
+
+
+                    <div
+                        class="experiment-observation anomaly">
+
+                        <span id="experimentTwoTitle">
+                            EXPERIMENT II — UNSTABLE
+                        </span>
+
+                        <p id="experimentTwoText">
+
+                            The potion changed unexpectedly
+                            despite identical conditions.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="stamp"
+                    id="stamp">
+
+                    ANOMALY CONFIRMED
+
+                </div>
+
+
+                <div class="next-lead">
+
+                    <small id="nextLeadLabel">
+                        NEXT LEAD
+                    </small>
+
+                    <h3 id="nextLeadTitle">
+
+                        THE FOUR INCIDENTS ARE CONNECTED
+
+                    </h3>
+
+                    <p id="nextLeadText">
+
+                        The same instability observed in the
+                        creature, plant, spell, and potion cases
+                        suggests a single disturbance affecting
+                        magical balance.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <button
+                id="finishBtn"
+                class="finish-btn">
+
+                VIEW CONNECTION →
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script src="potion.js"></script>
+
+</body>
+</html>

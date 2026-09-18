@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Charms Classroom | Case 001-C</title>
+
+    <link rel="stylesheet" href="lumos.css">
+</head>
+
+<body>
+
+    <main class="classroom">
+
+        <!-- Background -->
+        <div class="classroom-overlay"></div>
+
+        <!-- ================================
+             HEADER
+        ================================= -->
+
+        <header class="case-header">
+
+            <div class="case-number">
+                CASE 001-C
+            </div>
+
+            <div class="case-name">
+                LUMOS
+            </div>
+
+            <div class="case-type">
+                SPELL ANOMALY
+            </div>
+
+        </header>
+
+
+        <!-- ================================
+             LANGUAGE SWITCH
+        ================================= -->
+
+        <div class="language-switch">
+
+            <button
+                id="enBtn"
+                class="lang-btn active"
+            >
+                EN
+            </button>
+
+            <span>|</span>
+
+            <button
+                id="arBtn"
+                class="lang-btn"
+            >
+                AR
+            </button>
+
+        </div>
+
+
+        <!-- ================================
+             MAIN SPELL AREA
+        ================================= -->
+
+        <section class="spell-section">
+
+
+            <!-- INSTRUCTIONS -->
+
+            <div class="instruction-panel">
+
+                <div class="small-label">
+                    CHARMS CLASSROOM
+                </div>
+
+                <h1>
+                    Cast Lumos.
+                </h1>
+
+                <p>
+                    Trace the spell symbol exactly as shown.
+                </p>
+
+                <p class="warning">
+                    Observe the magical response.
+                </p>
+
+            </div>
+
+
+            <!-- ================================
+                 SPELL
+            ================================= -->
+
+            <div class="spell-area">
+
+                <div class="spell-title">
+                    LUMOS
+                </div>
+
+
+                <div class="trace-container">
+
+                    <!-- Faint spell guide -->
+
+                    <svg
+                        id="spellGuide"
+                        class="spell-guide"
+                        viewBox="0 0 300 260"
+                    >
+
+                        <path
+                            id="guidePath"
+                            d="M 75 215 L 150 45 L 225 215"
+                        ></path>
+
+                    </svg>
+
+
+                    <!-- Drawing canvas -->
+
+                    <canvas
+                        id="traceCanvas"
+                        width="300"
+                        height="260"
+                    ></canvas>
+
+
+                    <div class="start-point">
+                        START
+                    </div>
+
+                    <div class="end-point">
+                        END
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================================
+                 STATUS
+            ================================= -->
+
+            <div class="status-panel">
+
+                <div class="attempt-label">
+                    MAGICAL RESPONSE TEST
+                </div>
+
+                <div
+                    id="attemptCounter"
+                    class="attempt-counter"
+                >
+                    0 / 3
+                </div>
+
+                <div
+                    id="testLog"
+                    class="test-log"
+                >
+                    Awaiting first casting...
+                </div>
+
+                <div
+                    id="outputText"
+                    class="output-text"
+                >
+                    Magical output: —
+                </div>
+
+            </div>
+
+
+            <!-- ================================
+                 MAGICAL LIGHT
+            ================================= -->
+
+            <div
+                id="lightEffect"
+                class="light-effect"
+            >
+
+                <div class="light-glow"></div>
+
+                <div class="light-core"></div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================================
+             RETURN
+        ================================= -->
+
+        <button
+            id="returnInvestigation"
+            class="return-button"
+        >
+            ← RETURN TO INVESTIGATION
+        </button>
+
+    </main>
+
+
+    <!-- =========================================
+         CASE FILE
+    ========================================= -->
+
+    <div
+        id="caseOverlay"
+        class="case-overlay hidden"
+    >
+
+        <div class="case-file">
+
+            <!-- CLOSE -->
+
+            <button
+                id="closeCase"
+                class="close-case"
+                aria-label="Close case file"
+            >
+                ×
+            </button>
+
+
+            <!-- FILE HEADER -->
+
+            <div class="file-top">
+
+                <span>
+                    MINISTRY OF MAGIC
+                </span>
+
+                <span>
+                    DEPARTMENT OF MAGICAL ANOMALIES
+                </span>
+
+            </div>
+
+
+            <div class="file-title">
+                CASE FILE 001-C
+            </div>
+
+            <div class="file-subtitle">
+                SPELL ANOMALY — LUMOS
+            </div>
+
+
+            <!-- STAMP -->
+
+            <div class="case-stamp">
+                SPELL INSTABILITY<br>
+                CONFIRMED
+            </div>
+
+
+            <!-- ================================
+                 ANALYSIS
+            ================================= -->
+
+            <div class="analysis">
+
+
+                <!-- 01 -->
+
+                <div class="analysis-row">
+
+                    <span>
+                        01
+                    </span>
+
+                    <div>
+
+                        <strong>
+                            OBSERVATION
+                        </strong>
+
+                        <p>
+                            The same Lumos spell was successfully
+                            cast three times.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- 02 -->
+
+                <div class="analysis-row">
+
+                    <span>
+                        02
+                    </span>
+
+                    <div>
+
+                        <strong>
+                            FIRST RESPONSE
+                        </strong>
+
+                        <p>
+                            The spell produced only a weak,
+                            localized light.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- 03 -->
+
+                <div class="analysis-row">
+
+                    <span>
+                        03
+                    </span>
+
+                    <div>
+
+                        <strong>
+                            SECOND RESPONSE
+                        </strong>
+
+                        <p>
+                            The same spell suddenly produced an
+                            unusually powerful burst of light,
+                            illuminating the entire classroom.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- 04 -->
+
+                <div class="analysis-row">
+
+                    <span>
+                        04
+                    </span>
+
+                    <div>
+
+                        <strong>
+                            THIRD RESPONSE
+                        </strong>
+
+                        <p>
+                            Magical illumination became unstable,
+                            repeatedly weakening and intensifying
+                            without any change in the casting method.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- 05 -->
+
+                <div class="analysis-row">
+
+                    <span>
+                        05
+                    </span>
+
+                    <div>
+
+                        <strong>
+                            CONCLUSION
+                        </strong>
+
+                        <p>
+                            The caster, spell symbol and casting
+                            method remained unchanged. The magical
+                            response itself is unstable.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================================
+                 NEXT LEAD
+            ================================= -->
+
+            <div class="next-lead">
+
+                <div class="lead-label">
+                    NEXT LEAD
+                </div>
+
+                <div class="lead-location">
+                    POTIONS LAB — CASE 001-D
+                </div>
+
+                <p>
+                    If magic itself is unstable, the same ingredients
+                    should not behave normally.
+                </p>
+
+            </div>
+
+
+            <!-- PROCEED -->
+
+            <button
+                id="finishBtn"
+                class="proceed-button"
+            >
+                PROCEED TO POTIONS LAB →
+            </button>
+
+
+            <!-- FOOTER -->
+
+            <div class="file-footer">
+                CLASSIFIED — MINISTRY EYES ONLY
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script src="lumos.js"></script>
+
+</body>
+
+</html>

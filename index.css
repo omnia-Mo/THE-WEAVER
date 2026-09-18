@@ -1,0 +1,1094 @@
+/* =====================================================
+   MINISTRY OF MAGIC
+   LEVEL BLACK — INDEX PAGE
+===================================================== */
+
+
+/* =====================================================
+   RESET
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+
+body {
+    overflow: hidden;
+
+    background: #020504;
+
+    color: #ddd6c7;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+}
+
+
+/* =====================================================
+   MAIN SCREEN
+===================================================== */
+
+.emergency-screen {
+
+    position: relative;
+
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+
+    background:
+
+        radial-gradient(
+            circle at center,
+            rgba(48, 55, 39, 0.18),
+            transparent 38%
+        ),
+
+        radial-gradient(
+            circle at 50% 45%,
+            rgba(69, 45, 76, 0.12),
+            transparent 55%
+        ),
+
+        #020504;
+}
+
+
+/* =====================================================
+   DARK VIGNETTE
+===================================================== */
+
+.emergency-screen::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 3;
+
+    pointer-events: none;
+
+    background:
+
+        radial-gradient(
+            ellipse at center,
+            transparent 25%,
+            rgba(0, 0, 0, 0.35) 65%,
+            rgba(0, 0, 0, 0.9) 100%
+        );
+}
+
+
+/* =====================================================
+   SUBTLE MAGICAL GLOW
+===================================================== */
+
+.ambient-glow {
+
+    position: absolute;
+
+    width: 700px;
+    height: 700px;
+
+    left: 50%;
+    top: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background:
+
+        radial-gradient(
+            circle,
+            rgba(117, 91, 139, 0.10),
+            transparent 68%
+        );
+
+    filter: blur(25px);
+
+    pointer-events: none;
+
+    z-index: 1;
+}
+
+
+/* =====================================================
+   MAGICAL PARTICLES
+===================================================== */
+
+.magic-particles {
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 2;
+
+    pointer-events: none;
+}
+
+
+.magic-particles span {
+
+    position: absolute;
+
+    width: 3px;
+    height: 3px;
+
+    border-radius: 50%;
+
+    background: #c9a95c;
+
+    box-shadow:
+        0 0 7px #c9a95c,
+        0 0 16px rgba(201, 169, 92, 0.6);
+
+    opacity: 0;
+
+    animation:
+        magicalFloat 7s infinite ease-in-out;
+}
+
+
+.magic-particles span:nth-child(1) {
+    left: 8%;
+    top: 65%;
+    animation-delay: 0s;
+}
+
+.magic-particles span:nth-child(2) {
+    left: 17%;
+    top: 24%;
+    animation-delay: 1.5s;
+}
+
+.magic-particles span:nth-child(3) {
+    left: 29%;
+    top: 78%;
+    animation-delay: 3s;
+}
+
+.magic-particles span:nth-child(4) {
+    left: 39%;
+    top: 15%;
+    animation-delay: 4s;
+}
+
+.magic-particles span:nth-child(5) {
+    left: 52%;
+    top: 82%;
+    animation-delay: 1s;
+}
+
+.magic-particles span:nth-child(6) {
+    left: 63%;
+    top: 20%;
+    animation-delay: 2s;
+}
+
+.magic-particles span:nth-child(7) {
+    left: 74%;
+    top: 70%;
+    animation-delay: 4.5s;
+}
+
+.magic-particles span:nth-child(8) {
+    left: 84%;
+    top: 30%;
+    animation-delay: 2.8s;
+}
+
+.magic-particles span:nth-child(9) {
+    left: 92%;
+    top: 65%;
+    animation-delay: 5s;
+}
+
+.magic-particles span:nth-child(10) {
+    left: 48%;
+    top: 45%;
+    animation-delay: 3.5s;
+}
+
+
+@keyframes magicalFloat {
+
+    0% {
+        opacity: 0;
+        transform:
+            translateY(30px)
+            scale(0.5);
+    }
+
+    30% {
+        opacity: 0.8;
+    }
+
+    60% {
+        opacity: 0.35;
+    }
+
+    100% {
+        opacity: 0;
+        transform:
+            translateY(-80px)
+            scale(1.2);
+    }
+}
+
+
+/* =====================================================
+   EMERGENCY CARD
+===================================================== */
+
+.emergency-card {
+
+    position: relative;
+
+    z-index: 10;
+
+    width: min(760px, 88vw);
+
+    padding: 42px 55px 28px;
+
+    text-align: center;
+
+    background:
+
+        linear-gradient(
+            145deg,
+            rgba(10, 13, 11, 0.96),
+            rgba(3, 6, 5, 0.98)
+        );
+
+    border:
+
+        1px solid
+        rgba(175, 145, 75, 0.35);
+
+    box-shadow:
+
+        0 35px 100px
+        rgba(0, 0, 0, 0.85),
+
+        0 0 80px
+        rgba(98, 69, 120, 0.08),
+
+        inset 0 0 60px
+        rgba(173, 143, 77, 0.025);
+
+    animation:
+        cardEntrance 1.2s ease forwards;
+}
+
+
+@keyframes cardEntrance {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(25px)
+            scale(0.97);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+    }
+}
+
+
+/* =====================================================
+   CARD CORNER LINES
+===================================================== */
+
+.emergency-card::before,
+.emergency-card::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 45px;
+    height: 45px;
+
+    border-color:
+        rgba(193, 159, 83, 0.55);
+
+    pointer-events: none;
+}
+
+
+.emergency-card::before {
+
+    left: 13px;
+    top: 13px;
+
+    border-left: 1px solid;
+    border-top: 1px solid;
+}
+
+
+.emergency-card::after {
+
+    right: 13px;
+    bottom: 13px;
+
+    border-right: 1px solid;
+    border-bottom: 1px solid;
+}
+
+
+/* =====================================================
+   MINISTRY HEADER
+===================================================== */
+
+.ministry-header {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 16px;
+
+    margin-bottom: 18px;
+}
+
+
+.ministry-symbol {
+
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border:
+
+        1px solid
+        rgba(193, 159, 83, 0.65);
+
+    color: #c6a55e;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 22px;
+
+    transform: rotate(45deg);
+
+    box-shadow:
+        0 0 20px
+        rgba(193, 159, 83, 0.06);
+}
+
+
+.ministry-symbol::first-letter {
+
+    display: inline-block;
+
+    transform: rotate(-45deg);
+}
+
+
+.ministry {
+
+    color: #d0bd8c;
+
+    font-size: 14px;
+
+    letter-spacing: 5px;
+
+    text-align: left;
+}
+
+
+.department {
+
+    margin-top: 5px;
+
+    color: #777a75;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 8px;
+
+    letter-spacing: 2.5px;
+
+    text-align: left;
+}
+
+
+/* =====================================================
+   CLASSIFIED
+===================================================== */
+
+.classified {
+
+    display: inline-block;
+
+    margin: 5px auto 27px;
+
+    padding: 5px 12px;
+
+    border:
+
+        1px solid
+        rgba(139, 56, 49, 0.75);
+
+    color: #a8524a;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 8px;
+
+    letter-spacing: 3px;
+}
+
+
+/* =====================================================
+   TITLE
+===================================================== */
+
+.title-area {
+
+    margin-top: 5px;
+}
+
+
+.alert-label {
+
+    margin-bottom: 15px;
+
+    color: #9d4c45;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 10px;
+
+    font-weight: bold;
+
+    letter-spacing: 3px;
+}
+
+
+h1 {
+
+    color: #e1dbcf;
+
+    font-size:
+        clamp(38px, 6vw, 64px);
+
+    font-weight: normal;
+
+    line-height: 0.95;
+
+    letter-spacing: 5px;
+}
+
+
+h1 span {
+
+    display: block;
+
+    margin-top: 9px;
+
+    color: #bca26a;
+
+    font-size: 0.55em;
+
+    letter-spacing: 8px;
+}
+
+
+.title-line {
+
+    width: 150px;
+
+    height: 1px;
+
+    margin: 25px auto 0;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            transparent,
+            #bca26a,
+            transparent
+        );
+}
+
+
+/* =====================================================
+   MESSAGE
+===================================================== */
+
+.message-area {
+
+    margin-top: 24px;
+}
+
+
+.message {
+
+    color: #d5d0c6;
+
+    font-size: 18px;
+
+    letter-spacing: 1px;
+}
+
+
+.sub-message {
+
+    margin-top: 8px;
+
+    color: #777a77;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+}
+
+
+/* =====================================================
+   WARNING
+===================================================== */
+
+.emergency-warning {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 17px;
+
+    max-width: 580px;
+
+    margin: 27px auto;
+
+    padding: 17px 20px;
+
+    text-align: left;
+
+    border-left:
+
+        2px solid
+        #87433d;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            rgba(116, 52, 45, 0.09),
+            transparent
+        );
+}
+
+
+.warning-icon {
+
+    width: 28px;
+    height: 28px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border:
+
+        1px solid
+        #914b44;
+
+    color: #a9574f;
+
+    font-family: Arial, sans-serif;
+
+    font-weight: bold;
+
+    font-size: 15px;
+}
+
+
+.warning-title {
+
+    color: #a65a52;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 9px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+
+.warning-text {
+
+    margin-top: 5px;
+
+    color: #858580;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 10px;
+
+    line-height: 1.6;
+}
+
+
+.warning-text strong {
+
+    color: #c2a467;
+}
+
+
+/* =====================================================
+   CASE INFORMATION
+===================================================== */
+
+.case-info {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 65px;
+
+    margin: 25px 0 28px;
+}
+
+
+.info-item {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 6px;
+}
+
+
+.info-item span {
+
+    color: #5f635e;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 7px;
+
+    letter-spacing: 2px;
+}
+
+
+.info-item strong {
+
+    color: #bdb6a8;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 10px;
+
+    letter-spacing: 1.5px;
+}
+
+
+.info-item .critical {
+
+    color: #a85149;
+}
+
+
+/* =====================================================
+   ENTER BUTTON
+===================================================== */
+
+#enterButton {
+
+    position: relative;
+
+    width: 100%;
+    max-width: 440px;
+
+    height: 57px;
+
+    margin: 0 auto;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 19px;
+
+    border:
+
+        1px solid
+        rgba(193, 159, 83, 0.55);
+
+    background:
+
+        linear-gradient(
+            90deg,
+            rgba(139, 104, 48, 0.14),
+            rgba(139, 104, 48, 0.025)
+        );
+
+    color: #d3c29e;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 10px;
+
+    font-weight: bold;
+
+    letter-spacing: 3px;
+
+    cursor: pointer;
+
+    transition:
+        0.35s ease;
+}
+
+
+#enterButton:hover {
+
+    border-color:
+        #c6a55e;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            rgba(139, 104, 48, 0.27),
+            rgba(139, 104, 48, 0.05)
+        );
+
+    box-shadow:
+
+        0 0 30px
+        rgba(193, 159, 83, 0.10);
+
+    transform:
+        translateY(-2px);
+}
+
+
+.button-symbol {
+
+    color: #c4a45e;
+
+    font-size: 15px;
+}
+
+
+.button-arrow {
+
+    color: #c4a45e;
+
+    font-size: 18px;
+
+    transition:
+        transform 0.3s ease;
+}
+
+
+#enterButton:hover .button-arrow {
+
+    transform:
+        translateX(6px);
+}
+
+
+/* =====================================================
+   SECURITY FOOTER
+===================================================== */
+
+.security-footer {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-top: 20px;
+
+    color: #4e524e;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 6px;
+
+    letter-spacing: 2px;
+}
+
+
+/* =====================================================
+   CORNER INFORMATION
+===================================================== */
+
+.corner {
+
+    position: absolute;
+
+    z-index: 4;
+
+    color: rgba(184, 157, 92, 0.4);
+
+    font-family: Arial, sans-serif;
+
+    font-size: 7px;
+
+    letter-spacing: 2px;
+}
+
+
+.corner-top-left {
+
+    top: 25px;
+    left: 30px;
+}
+
+
+.corner-top-right {
+
+    top: 25px;
+    right: 30px;
+}
+
+
+.corner-bottom-left {
+
+    bottom: 22px;
+    left: 30px;
+}
+
+
+.corner-bottom-right {
+
+    bottom: 22px;
+    right: 30px;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 650px) {
+
+    body {
+        overflow: auto;
+    }
+
+
+    .emergency-screen {
+
+        min-height: 100vh;
+        height: auto;
+
+        padding: 30px 0;
+    }
+
+
+    .emergency-card {
+
+        width: 90vw;
+
+        padding: 32px 20px 24px;
+    }
+
+
+    .ministry {
+
+        font-size: 10px;
+
+        letter-spacing: 3px;
+    }
+
+
+    .department {
+
+        font-size: 6px;
+
+        letter-spacing: 1.5px;
+    }
+
+
+    h1 {
+
+        font-size: 38px;
+
+        letter-spacing: 3px;
+    }
+
+
+    h1 span {
+
+        letter-spacing: 4px;
+    }
+
+
+    .emergency-warning {
+
+        padding: 14px;
+    }
+
+
+    .case-info {
+
+        gap: 25px;
+    }
+
+
+    #enterButton {
+
+        font-size: 8px;
+
+        letter-spacing: 2px;
+    }
+
+
+    .security-footer {
+
+        flex-direction: column;
+
+        gap: 6px;
+    }
+
+
+    .corner {
+
+        display: none;
+    }
+
+}
+.language-switch {
+    position: absolute;
+
+    top: 28px;
+    right: 35px;
+
+    z-index: 20;
+
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    color: rgba(210, 190, 140, 0.4);
+
+    font-family: Arial, sans-serif;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+}
+
+.language-switch button {
+    border: none;
+
+    background: none;
+
+    color: #c7b47b;
+
+    opacity: 0.45;
+
+    cursor: pointer;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    transition: 0.25s ease;
+}
+
+.language-switch button:hover,
+.language-switch button.active {
+    opacity: 1;
+}
+
+
+/* Arabic */
+
+body.arabic {
+    direction: rtl;
+}
+
+body.arabic .ministry,
+body.arabic .department {
+    letter-spacing: 0;
+}
+
+body.arabic h1 {
+    font-family:
+        Tahoma,
+        Arial,
+        sans-serif;
+
+    letter-spacing: 0;
+
+    line-height: 1.35;
+}
+
+body.arabic .main-message p {
+    font-family:
+        Tahoma,
+        Arial,
+        sans-serif;
+
+    letter-spacing: 0;
+}
+
+body.arabic .case-info {
+    direction: rtl;
+}
+
+body.arabic #enterButton {
+    font-family:
+        Tahoma,
+        Arial,
+        sans-serif;
+
+    letter-spacing: 0;
+}

@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>The Incidents Are Connected</title>
+
+    <link rel="stylesheet" href="connected.css">
+</head>
+
+<body>
+
+    <main class="investigation-board">
+
+        <!-- =========================================
+             HEADER
+        ========================================== -->
+
+        <header class="board-header">
+
+            <div class="case-label">
+                CASE 001 — INVESTIGATION BOARD
+            </div>
+
+            <h1 id="mainTitle">
+                THE INCIDENTS ARE CONNECTED
+            </h1>
+
+            <p id="mainSubtitle">
+                Four anomalies. One disturbance.
+            </p>
+
+        </header>
+
+
+        <!-- =========================================
+             EVIDENCE — ASTER
+        ========================================== -->
+
+        <div class="evidence-card evidence-aster">
+
+            <div class="evidence-image">
+                <img
+                    src="images/hippogriff-feather.png"
+                    alt="Hippogriff feather evidence"
+                >
+            </div>
+
+            <div class="evidence-label">
+
+                <span>001-A</span>
+
+                <strong>ASTER</strong>
+
+                <small>CREATURE ANOMALY</small>
+
+            </div>
+
+        </div>
+
+
+        <!-- =========================================
+             EVIDENCE — WOLFSBANE
+        ========================================== -->
+
+        <div class="evidence-card evidence-wolfsbane">
+
+            <div class="evidence-image">
+
+                <img
+                    src="images/Wolfsbane.png"
+                    alt="Wolfsbane evidence"
+                >
+
+            </div>
+
+            <div class="evidence-label">
+
+                <span>001-B</span>
+
+                <strong>WOLFSBANE</strong>
+
+                <small>PLANT ANOMALY</small>
+
+            </div>
+
+        </div>
+
+
+        <!-- =========================================
+             EVIDENCE — LUMOS
+        ========================================== -->
+
+        <div class="evidence-card evidence-lumos">
+
+            <div class="lumos-symbol">
+                Λ
+            </div>
+
+            <div class="evidence-label">
+
+                <span>001-C</span>
+
+                <strong>LUMOS</strong>
+
+                <small>SPELL ANOMALY</small>
+
+            </div>
+
+        </div>
+
+
+        <!-- =========================================
+             EVIDENCE — POTION
+        ========================================== -->
+
+        <div class="evidence-card evidence-potion">
+
+            <div class="evidence-image potion-image">
+
+                <img
+                    src="images/cauldron-spell2.png"
+                    alt="Potion anomaly evidence"
+                >
+
+            </div>
+
+            <div class="evidence-label">
+
+                <span>001-D</span>
+
+                <strong>POTION</strong>
+
+                <small>POTION ANOMALY</small>
+
+            </div>
+
+        </div>
+
+
+        <!-- =========================================
+             RED STRINGS
+        ========================================== -->
+
+        <svg
+            class="red-strings"
+            viewBox="0 0 1000 700"
+            preserveAspectRatio="none"
+            aria-hidden="true"
+        >
+
+            <path
+                class="string"
+                d="M150 155 C280 225, 390 300, 500 350"
+            />
+
+            <path
+                class="string"
+                d="M850 155 C720 225, 610 300, 500 350"
+            />
+
+            <path
+                class="string"
+                d="M155 535 C280 470, 390 410, 500 350"
+            />
+
+            <path
+                class="string"
+                d="M845 535 C720 470, 610 410, 500 350"
+            />
+
+            <path
+                class="string string-book"
+                d="M500 350 C500 420, 505 475, 505 535"
+            />
+
+        </svg>
+
+
+        <!-- =========================================
+             CENTER CONNECTION
+        ========================================== -->
+
+        <section class="connection-reveal">
+
+            <div class="connection-symbol">
+                ◇
+            </div>
+
+            <div class="connection-line"></div>
+
+            <h2 id="connectionTitle">
+                THE SAME DISTURBANCE
+            </h2>
+
+            <p id="connectionText">
+                The four anomalies display the same magical instability.
+            </p>
+
+            <div class="connection-stamp">
+                CONNECTION CONFIRMED
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             OLD BOOK
+        ========================================== -->
+
+        <section
+            class="old-book-area"
+            id="oldBookArea"
+        >
+
+            <div class="book-light"></div>
+
+            <div class="book-glow"></div>
+
+            <img
+                id="oldBook"
+                class="old-book"
+                src="images/old-book-closed.png"
+                alt="Ancient magical book"
+            >
+
+            <div
+                id="bookHint"
+                class="book-hint"
+            >
+                AN OLD RECORD HAS BEEN FOUND
+            </div>
+
+            <button
+                id="openBookBtn"
+                class="open-book-btn"
+                type="button"
+            >
+                OPEN THE BOOK →
+            </button>
+
+            <div
+                id="continueHint"
+                class="continue-hint"
+            >
+                CLICK THE BOOK TO CONTINUE →
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             FINAL MESSAGE
+        ========================================== -->
+
+        <div class="final-message">
+
+            <span id="finalMessage">
+                THE INCIDENTS ARE CONNECTED.
+            </span>
+
+        </div>
+
+
+        <!-- =========================================
+             LANGUAGE
+        ========================================== -->
+
+        <div class="language-switch">
+
+            <button
+                id="enBtn"
+                class="active"
+                type="button"
+            >
+                EN
+            </button>
+
+            <span>/</span>
+
+            <button
+                id="arBtn"
+                type="button"
+            >
+                AR
+            </button>
+
+        </div>
+
+
+        <!-- =========================================
+             BACK
+        ========================================== -->
+
+        <button
+            id="backBtn"
+            class="back-btn"
+            type="button"
+        >
+            ← INVESTIGATION
+        </button>
+
+    </main>
+
+
+    <script src="connected.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,2311 @@
+/* =========================================================
+   GREENHOUSE 03 — CASE 001-B
+   CINEMATIC MINISTRY INVESTIGATION
+   ========================================================= */
+
+:root {
+    --gold: #d8b957;
+    --gold-light: #f1dfaa;
+
+    --purple: #9c8bd0;
+    --purple-dark: #4d3d72;
+
+    --blue: #101a35;
+    --blue-light: #18264b;
+
+    --danger: #d35c66;
+
+    --black: #05070d;
+    --deep-black: #020308;
+
+    --paper: #e8dfc8;
+    --paper-dark: #cfc2a4;
+
+    --ink: #171717;
+    --ink-soft: #403b32;
+}
+
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    background: #05070d;
+    color: #eee;
+}
+
+button {
+    font: inherit;
+}
+
+
+/* =========================================================
+   MINISTRY TOP BAR
+   ========================================================= */
+
+.ministry-bar {
+    position: relative;
+
+    z-index: 100;
+
+    width: 100%;
+    min-height: 58px;
+
+    padding: 12px 28px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-bottom: 1px solid rgba(216, 185, 87, 0.35);
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(3, 5, 10, 0.97),
+            rgba(14, 18, 34, 0.96),
+            rgba(3, 5, 10, 0.97)
+        );
+
+    backdrop-filter: blur(10px);
+}
+
+.ministry-title {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+
+    color: var(--gold-light);
+
+    font-family: Arial, sans-serif;
+
+    font-size: 12px;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+}
+
+.ministry-title small {
+    color: rgba(241, 223, 170, 0.45);
+
+    font-size: 8px;
+
+    letter-spacing: 1.8px;
+}
+
+
+/* =========================================================
+   LANGUAGE SWITCHER
+   ========================================================= */
+
+.language-switcher {
+    display: flex;
+    gap: 5px;
+
+    z-index: 110;
+}
+
+.language-switcher button {
+    min-width: 34px;
+
+    padding: 6px 8px;
+
+    border: 1px solid rgba(216, 185, 87, 0.28);
+
+    background: rgba(5, 7, 13, 0.75);
+
+    color: rgba(241, 223, 170, 0.65);
+
+    font-family: Arial, sans-serif;
+
+    font-size: 9px;
+
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    transition: 0.25s ease;
+}
+
+.language-switcher button:hover,
+.language-switcher button.active {
+    color: var(--gold-light);
+
+    border-color: var(--gold);
+
+    background: rgba(216, 185, 87, 0.1);
+}
+
+
+/* =========================================================
+   MAIN GREENHOUSE SCENE
+   ========================================================= */
+
+.greenhouse-scene {
+    position: relative;
+
+    width: 100%;
+    min-height: calc(100vh - 58px);
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            rgba(3, 7, 12, 0.34),
+            rgba(3, 7, 12, 0.72)
+        ),
+        url("images/Wolfsbane.png")
+        center center / cover no-repeat;
+}
+
+
+/* =========================================================
+   ATMOSPHERE
+   ========================================================= */
+
+.greenhouse-scene::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    pointer-events: none;
+
+    z-index: 1;
+
+    background:
+        radial-gradient(
+            circle at 50% 38%,
+            transparent 8%,
+            rgba(0, 0, 0, 0.18) 45%,
+            rgba(0, 0, 0, 0.7) 100%
+        );
+}
+
+
+/* =========================================================
+   DARKNESS
+   ========================================================= */
+
+.scene-darkness {
+    position: absolute;
+    inset: 0;
+
+    z-index: 2;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(0, 0, 0, 0.12),
+            transparent 35%,
+            rgba(0, 0, 0, 0.35)
+        );
+}
+
+
+/* =========================================================
+   MAGIC LIGHT
+   ========================================================= */
+
+.magic-light {
+    position: absolute;
+
+    width: 520px;
+    height: 520px;
+
+    top: 5%;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(156, 139, 208, 0.13),
+            transparent 68%
+        );
+
+    filter: blur(35px);
+
+    pointer-events: none;
+
+    z-index: 3;
+}
+
+
+/* =========================================================
+   FOG
+   ========================================================= */
+
+.fog {
+    position: absolute;
+
+    width: 65vw;
+    height: 30vh;
+
+    left: -10vw;
+    bottom: 5vh;
+
+    border-radius: 50%;
+
+    background: rgba(190, 205, 215, 0.05);
+
+    filter: blur(40px);
+
+    pointer-events: none;
+
+    animation: fogMove 14s ease-in-out infinite alternate;
+
+    z-index: 4;
+}
+
+@keyframes fogMove {
+    from {
+        transform: translateX(-5vw);
+    }
+
+    to {
+        transform: translateX(8vw);
+    }
+}
+
+
+/* =========================================================
+   PARTICLES
+   ========================================================= */
+
+.particles {
+    position: absolute;
+    inset: 0;
+
+    z-index: 5;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   SCENE HEADER
+   ========================================================= */
+
+.scene-header {
+    position: relative;
+
+    z-index: 15;
+
+    width: 100%;
+
+    padding-top: 58px;
+
+    text-align: center;
+
+    pointer-events: none;
+}
+
+.case-label {
+    margin-bottom: 12px;
+
+    color: var(--gold);
+
+    font-family: Arial, sans-serif;
+
+    font-size: 9px;
+
+    letter-spacing: 5px;
+
+    text-transform: uppercase;
+
+    opacity: 0.85;
+}
+
+.scene-header h1 {
+    margin: 0;
+
+    color: #f5ecd7;
+
+    font-size: clamp(42px, 6vw, 76px);
+
+    font-weight: normal;
+
+    letter-spacing: 9px;
+
+    line-height: 1;
+
+    text-shadow:
+        0 0 20px rgba(156, 139, 208, 0.3),
+        0 5px 30px rgba(0, 0, 0, 0.9);
+}
+
+.scene-header p {
+    margin-top: 14px;
+
+    color: rgba(241, 223, 170, 0.8);
+
+    font-family: Arial, sans-serif;
+
+    font-size: 10px;
+
+    letter-spacing: 5px;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   OBSERVATION
+   Hidden from main scene
+   ========================================================= */
+
+.observation-card {
+    display: none;
+}
+
+
+/* =========================================================
+   EVIDENCE MARKERS
+   ========================================================= */
+
+.evidence-marker {
+    position: absolute;
+
+    z-index: 25;
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 8px 12px;
+
+    border: 1px solid rgba(216, 185, 87, 0.38);
+
+    background: rgba(3, 6, 13, 0.52);
+
+    color: var(--gold-light);
+
+    backdrop-filter: blur(5px);
+
+    font-family: Arial, sans-serif;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 5px 25px rgba(0, 0, 0, 0.3);
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.evidence-marker:hover {
+    transform: scale(1.06);
+
+    border-color: var(--gold);
+
+    background: rgba(8, 11, 23, 0.8);
+}
+
+.evidence-marker.discovered {
+    border-color: rgba(216, 185, 87, 0.85);
+
+    background: rgba(216, 185, 87, 0.1);
+
+    opacity: 0.55;
+}
+
+.marker-icon {
+    color: var(--gold);
+
+    font-size: 17px;
+
+    line-height: 1;
+}
+
+.marker-label {
+    font-size: 8px;
+
+    letter-spacing: 2px;
+
+    white-space: nowrap;
+}
+
+.marker-pulse {
+    position: absolute;
+
+    inset: -5px;
+
+    border: 1px solid rgba(216, 185, 87, 0.25);
+
+    pointer-events: none;
+
+    animation: markerPulse 2.5s ease-in-out infinite;
+}
+
+@keyframes markerPulse {
+    0%,
+    100% {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.04);
+    }
+}
+
+
+/* =========================================================
+   EVIDENCE POSITIONS
+   ========================================================= */
+
+.roots-marker {
+    top: 38%;
+    left: 11%;
+}
+
+.water-marker {
+    top: 42%;
+    right: 14%;
+}
+
+.flora-marker {
+    top: 57%;
+    left: 21%;
+}
+
+.growth-marker {
+    top: 61%;
+    right: 28%;
+}
+
+
+/* =========================================================
+   EVIDENCE TRAY
+   LOWER RIGHT
+   ========================================================= */
+
+.evidence-tray {
+    position: absolute;
+
+    z-index: 30;
+
+    right: 35px;
+    bottom: 92px;
+
+    width: 275px;
+
+    padding: 13px 15px;
+
+    border: 1px solid rgba(216, 185, 87, 0.35);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(4, 7, 15, 0.88),
+            rgba(18, 15, 32, 0.82)
+        );
+
+    backdrop-filter: blur(10px);
+
+    box-shadow:
+        0 15px 45px rgba(0, 0, 0, 0.5);
+}
+
+.tray-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 10px;
+
+    color: rgba(241, 223, 170, 0.72);
+
+    font-family: Arial, sans-serif;
+
+    font-size: 8px;
+
+    letter-spacing: 1.5px;
+}
+
+.tray-header strong {
+    color: var(--gold);
+
+    font-size: 9px;
+}
+
+.evidence-slots {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 7px;
+}
+
+.empty-slot,
+.evidence-slot {
+    width: 100%;
+    height: 43px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px dashed rgba(216, 185, 87, 0.25);
+
+    background: rgba(255, 255, 255, 0.025);
+
+    color: var(--gold);
+
+    font-size: 19px;
+
+    transition: 0.25s ease;
+}
+
+.evidence-slot {
+    border-style: solid;
+
+    border-color: rgba(216, 185, 87, 0.55);
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(216, 185, 87, 0.12),
+            rgba(255, 255, 255, 0.025)
+        );
+
+    box-shadow:
+        inset 0 0 15px rgba(216, 185, 87, 0.05);
+}
+
+
+/* =========================================================
+   OPEN CASE BUTTON
+   ========================================================= */
+
+.open-case {
+    position: absolute;
+
+    z-index: 30;
+
+    right: 35px;
+    bottom: 32px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 9px;
+
+    padding: 11px 21px;
+
+    border: 1px solid var(--gold);
+
+    background: rgba(4, 6, 13, 0.78);
+
+    color: var(--gold-light);
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 5px 25px rgba(0, 0, 0, 0.4);
+
+    transition: 0.25s ease;
+}
+
+.open-case:hover {
+    transform: translateY(-3px);
+
+    background: rgba(216, 185, 87, 0.12);
+
+    box-shadow:
+        0 8px 30px rgba(216, 185, 87, 0.15);
+}
+
+
+/* =========================================================
+   RETURN BUTTON
+   ========================================================= */
+
+.return-button {
+    position: absolute;
+
+    z-index: 30;
+
+    left: 30px;
+    bottom: 32px;
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    border: none;
+
+    background: transparent;
+
+    color: rgba(241, 223, 170, 0.5);
+
+    font-family: Arial, sans-serif;
+
+    font-size: 8px;
+
+    letter-spacing: 1.5px;
+
+    cursor: pointer;
+
+    transition: 0.25s ease;
+}
+
+.return-button:hover {
+    color: var(--gold-light);
+}
+
+
+/* =========================================================
+   HIDDEN UTILITY
+   ========================================================= */
+
+.hidden {
+    display: none !important;
+}
+
+
+/* =========================================================
+   CASE FILE OVERLAY
+   ========================================================= */
+
+.case-overlay {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 900;
+
+    display: none;
+
+    align-items: flex-start;
+    justify-content: center;
+
+    padding: 75px 25px 40px;
+
+    overflow-y: auto;
+
+    background: rgba(2, 4, 10, 0.84);
+
+    backdrop-filter: blur(10px);
+}
+
+.case-overlay.active {
+    display: flex;
+}
+
+
+/* =========================================================
+   PAPER STACK
+   ========================================================= */
+
+.paper-stack {
+    position: relative;
+
+    width: min(920px, 95vw);
+
+    margin-bottom: 40px;
+
+    flex-shrink: 0;
+}
+
+.paper-stack::before,
+.paper-stack::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background: var(--paper-dark);
+
+    z-index: -1;
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.paper-stack::before {
+    transform: rotate(-1deg);
+}
+
+.paper-stack::after {
+    transform: rotate(0.8deg);
+}
+
+
+/* =========================================================
+   CASE PAPER
+   ========================================================= */
+
+.case-paper {
+    position: relative;
+
+    width: 100%;
+
+    padding: 38px 45px 30px;
+
+    color: var(--ink);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(238, 230, 208, 0.98),
+            rgba(224, 212, 185, 0.98)
+        );
+
+    border: 1px solid rgba(0, 0, 0, 0.2);
+
+    box-shadow:
+        0 25px 70px rgba(0, 0, 0, 0.7);
+}
+
+.case-paper::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    pointer-events: none;
+
+    background:
+        repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 5px,
+            rgba(70, 50, 20, 0.025) 6px
+        );
+}
+
+
+/* =========================================================
+   CLOSE X
+   ========================================================= */
+
+.close-case {
+    position: absolute;
+
+    top: 13px;
+    right: 15px;
+
+    z-index: 100;
+
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(0, 0, 0, 0.4);
+
+    background: rgba(232, 223, 200, 0.96);
+
+    color: #151515;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 25px;
+
+    line-height: 1;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.close-case:hover {
+    background: #151515;
+
+    color: var(--paper);
+
+    transform: rotate(4deg);
+}
+
+
+/* =========================================================
+   PAPER HEADER
+   ========================================================= */
+
+.paper-header {
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding-bottom: 15px;
+
+    margin-bottom: 15px;
+
+    border-bottom: 2px solid rgba(0, 0, 0, 0.6);
+}
+
+.paper-ministry {
+    display: block;
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+.paper-department {
+    display: block;
+
+    margin-top: 4px;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 8px;
+
+    letter-spacing: 1px;
+
+    opacity: 0.65;
+}
+
+.classified {
+    padding: 7px 12px;
+
+    border: 2px solid #7c242b;
+
+    color: #7c242b;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 9px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    transform: rotate(-5deg);
+
+    opacity: 0.85;
+}
+
+
+/* =========================================================
+   PAPER META
+   ========================================================= */
+
+.paper-meta {
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    padding-bottom: 9px;
+
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+
+    font-family: Arial, sans-serif;
+
+    font-size: 8px;
+
+    letter-spacing: 1.3px;
+
+    opacity: 0.65;
+}
+
+
+/* =========================================================
+   PAPER TITLE
+   ========================================================= */
+
+.paper-title {
+    padding: 22px 0 15px;
+}
+
+.paper-title > span {
+    font-family: Arial, sans-serif;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    opacity: 0.55;
+}
+
+.paper-title h2 {
+    margin-top: 7px;
+
+    font-size: clamp(25px, 4vw, 38px);
+
+    letter-spacing: 3px;
+
+    line-height: 1.1;
+}
+
+.paper-title p {
+    margin-top: 7px;
+
+    color: #5b5142;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+}
+
+
+/* =========================================================
+   STATUS STRIP
+   ========================================================= */
+
+.status-strip {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    border-top: 1px solid rgba(0, 0, 0, 0.3);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+
+    margin-bottom: 20px;
+}
+
+.status-strip > span {
+    padding: 10px;
+
+    text-align: center;
+
+    border-right: 1px solid rgba(0, 0, 0, 0.2);
+
+    font-family: Arial, sans-serif;
+
+    font-size: 8px;
+
+    letter-spacing: 1px;
+}
+
+.status-strip > span:last-child {
+    border-right: none;
+}
+
+.status-strip b {
+    display: block;
+
+    margin-top: 4px;
+
+    font-size: 10px;
+
+    letter-spacing: 1.5px;
+}
+
+
+/* =========================================================
+   PAPER SECTION
+   ========================================================= */
+
+.paper-section {
+    display: grid;
+
+    grid-template-columns: 50px 1fr;
+
+    gap: 15px;
+
+    margin-top: 25px;
+
+    padding-top: 20px;
+
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.section-number {
+    font-family: "Courier New", monospace;
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    opacity: 0.5;
+}
+
+.section-content h3 {
+    margin-bottom: 10px;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+}
+
+.section-content > p {
+    color: var(--ink-soft);
+
+    font-size: 13px;
+
+    line-height: 1.75;
+}
+
+
+/* =========================================================
+   HANDWRITTEN NOTE
+   ========================================================= */
+
+.handwritten-note {
+    margin-top: 16px !important;
+
+    padding: 12px 15px;
+
+    border-left: 3px solid #777;
+
+    background: rgba(0, 0, 0, 0.035);
+
+    font-style: italic;
+
+    font-size: 12px !important;
+}
+
+
+/* =========================================================
+   ASTER CORRELATION
+   ========================================================= */
+
+.aster-correlation {
+    margin: 25px 0;
+
+    padding: 20px;
+
+    border: 1px dashed rgba(40, 40, 40, 0.45);
+
+    background: rgba(70, 55, 30, 0.045);
+}
+
+.correlation-top {
+    display: grid;
+
+    grid-template-columns: 50px 1fr auto;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 18px;
+}
+
+.correlation-label {
+    display: block;
+
+    margin-bottom: 4px;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 8px;
+
+    letter-spacing: 1.5px;
+
+    opacity: 0.55;
+}
+
+.correlation-top h3 {
+    margin: 0;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 10px;
+
+    letter-spacing: 1.5px;
+}
+
+.correlation-stamp {
+    padding: 5px 8px;
+
+    border: 1px solid #6d2027;
+
+    color: #6d2027;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 8px;
+
+    letter-spacing: 1px;
+
+    transform: rotate(-3deg);
+}
+
+.aster-evidence-content {
+    display: grid;
+
+    grid-template-columns: 170px 1fr;
+
+    gap: 22px;
+
+    align-items: start;
+}
+
+.feather-frame {
+    position: relative;
+
+    width: 160px;
+    height: 120px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    border: 1px solid rgba(0, 0, 0, 0.35);
+
+    background: rgba(0, 0, 0, 0.06);
+}
+
+.feather-frame img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+}
+
+.feather-mark {
+    position: absolute;
+
+    right: 7px;
+    bottom: 7px;
+
+    width: 27px;
+    height: 27px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #6d2027;
+
+    background: rgba(232, 223, 200, 0.9);
+
+    color: #6d2027;
+
+    font-size: 14px;
+}
+
+.feather-caption {
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    padding: 4px;
+
+    background: rgba(232, 223, 200, 0.82);
+
+    font-family: Arial, sans-serif;
+
+    font-size: 7px;
+
+    letter-spacing: 1px;
+
+    text-align: center;
+}
+
+.correlation-text {
+    color: var(--ink-soft);
+
+    font-size: 12px;
+
+    line-height: 1.7;
+}
+
+.case-reference {
+    margin-bottom: 8px;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+
+    opacity: 0.5;
+}
+
+.same-mark {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    margin-top: 15px;
+
+    padding: 12px;
+
+    border-top: 1px solid rgba(0, 0, 0, 0.15);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.mark-item {
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+}
+
+.mark-item span {
+    color: #6d2027;
+
+    font-size: 18px;
+}
+
+.mark-item small {
+    font-family: Arial, sans-serif;
+
+    font-size: 7px;
+
+    letter-spacing: 1px;
+}
+
+.connection-line {
+    opacity: 0.4;
+
+    font-size: 10px;
+}
+
+.investigator-note {
+    margin-top: 15px;
+
+    padding: 10px;
+
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+
+    font-family: Arial, sans-serif;
+
+    font-size: 8px;
+
+    line-height: 1.6;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+}
+
+.investigator-note span {
+    display: block;
+
+    margin-bottom: 5px;
+
+    opacity: 0.5;
+}
+
+.investigator-note strong {
+    display: block;
+}
+
+
+/* =========================================================
+   PAPER EVIDENCE
+   ========================================================= */
+
+.paper-evidence-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 10px;
+}
+
+.paper-evidence-card {
+    position: relative;
+
+    padding: 14px;
+
+    border: 1px solid rgba(0, 0, 0, 0.22);
+
+    background: rgba(0, 0, 0, 0.035);
+}
+
+.paper-symbol {
+    margin-bottom: 7px;
+
+    color: #6d2027;
+
+    font-size: 22px;
+}
+
+.paper-evidence-card h4 {
+    margin-bottom: 6px;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 9px;
+
+    letter-spacing: 1px;
+}
+
+.paper-evidence-card p {
+    color: var(--ink-soft);
+
+    font-size: 10px;
+
+    line-height: 1.55;
+}
+
+
+/* =========================================================
+   PUZZLE
+   ========================================================= */
+
+.puzzle-section {
+    margin-top: 30px;
+}
+
+.puzzle-locked {
+    padding: 20px;
+
+    border: 1px dashed rgba(0, 0, 0, 0.3);
+
+    background: rgba(0, 0, 0, 0.035);
+
+    text-align: center;
+}
+
+.lock-icon {
+    margin-bottom: 8px;
+
+    font-size: 25px;
+}
+
+.puzzle-locked p {
+    color: var(--ink-soft);
+
+    font-size: 11px;
+
+    line-height: 1.6;
+}
+
+.symbol-puzzle {
+    margin-top: 15px;
+}
+
+.puzzle-instruction {
+    margin-bottom: 15px;
+
+    color: var(--ink-soft);
+
+    font-size: 12px;
+
+    line-height: 1.6;
+}
+
+.puzzle-instruction span {
+    display: block;
+}
+
+.puzzle-instruction small {
+    display: block;
+
+    margin-top: 4px;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 9px;
+
+    opacity: 0.6;
+}
+
+.puzzle-progress {
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-bottom: 10px;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 8px;
+
+    letter-spacing: 1px;
+}
+
+.puzzle-progress strong {
+    color: #6d2027;
+}
+
+.symbol-grid {
+    display: grid;
+
+    grid-template-columns: repeat(6, 1fr);
+
+    gap: 7px;
+}
+
+.symbol-button {
+    height: 52px;
+
+    border: 1px solid rgba(0, 0, 0, 0.3);
+
+    background: rgba(0, 0, 0, 0.035);
+
+    color: #25221d;
+
+    font-size: 21px;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.symbol-button:hover {
+    border-color: #856d2c;
+
+    background: rgba(216, 185, 87, 0.12);
+
+    transform: translateY(-2px);
+}
+
+.symbol-button.correct {
+    border-color: #3e704b;
+
+    background: rgba(55, 115, 70, 0.14);
+
+    color: #174927;
+
+    cursor: default;
+}
+
+.symbol-button.wrong {
+    border-color: #8c333b;
+
+    background: rgba(160, 40, 50, 0.1);
+
+    color: #7b1e26;
+
+    animation: wrongSymbol 0.35s ease;
+}
+
+@keyframes wrongSymbol {
+    0% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-5px);
+    }
+
+    50% {
+        transform: translateX(5px);
+    }
+
+    75% {
+        transform: translateX(-3px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.puzzle-message {
+    min-height: 25px;
+
+    margin-top: 12px;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 9px;
+
+    text-align: center;
+}
+
+.puzzle-message.success {
+    color: #245d34;
+}
+
+.puzzle-message.error {
+    color: #7b1e26;
+}
+
+
+/* =========================================================
+   FINAL RESULT
+   ========================================================= */
+
+.final-result {
+    margin-top: 20px;
+
+    padding: 25px;
+
+    border: 1px solid rgba(0, 0, 0, 0.35);
+
+    background: rgba(0, 0, 0, 0.04);
+
+    text-align: center;
+}
+
+.success-stamp {
+    display: inline-block;
+
+    padding: 7px 12px;
+
+    border: 2px solid #356344;
+
+    color: #356344;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 8px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    transform: rotate(-2deg);
+}
+
+.code-display {
+    margin: 18px 0;
+
+    font-family: "Courier New", monospace;
+
+    font-size: clamp(24px, 5vw, 36px);
+
+    font-weight: bold;
+
+    letter-spacing: 7px;
+}
+
+.final-result h4 {
+    font-size: 17px;
+
+    letter-spacing: 3px;
+}
+
+.final-result p {
+    margin-top: 8px;
+
+    color: var(--ink-soft);
+
+    font-size: 11px;
+
+    line-height: 1.6;
+}
+
+.lead-message {
+    margin: 18px auto;
+
+    padding: 12px;
+
+    max-width: 350px;
+
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.lead-message span {
+    display: block;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+
+    opacity: 0.55;
+}
+
+.lead-message strong {
+    display: block;
+
+    margin-top: 5px;
+
+    letter-spacing: 2px;
+}
+
+#finishBtn {
+    padding: 11px 20px;
+
+    border: 1px solid #29251e;
+
+    background: #29251e;
+
+    color: var(--paper);
+
+    font-family: Arial, sans-serif;
+
+    font-size: 9px;
+
+    letter-spacing: 1.5px;
+
+    cursor: pointer;
+
+    transition: 0.25s ease;
+}
+
+#finishBtn:hover {
+    background: #111;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   PAPER FOOTER
+   ========================================================= */
+
+.paper-footer {
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 10px;
+
+    margin-top: 30px;
+
+    padding-top: 12px;
+
+    border-top: 1px solid rgba(0, 0, 0, 0.35);
+
+    font-family: Arial, sans-serif;
+
+    font-size: 7px;
+
+    letter-spacing: 1.2px;
+
+    opacity: 0.5;
+}
+
+
+/* =========================================================
+   DISCOVERY MODAL
+   IMPORTANT:
+   HIDDEN BY DEFAULT
+   ========================================================= */
+
+.evidence-modal {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 1200;
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 25px;
+
+    background: rgba(2, 4, 10, 0.78);
+
+    backdrop-filter: blur(8px);
+}
+
+.evidence-modal.active {
+    display: flex;
+}
+
+
+/* =========================================================
+   DISCOVERY CARD
+   ========================================================= */
+
+.discovery-card {
+    position: relative;
+
+    width: min(580px, 92vw);
+
+    padding: 35px 40px;
+
+    color: var(--ink);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(238, 229, 207, 0.98),
+            rgba(216, 203, 174, 0.98)
+        );
+
+    border: 1px solid rgba(0, 0, 0, 0.2);
+
+    box-shadow:
+        0 25px 80px rgba(0, 0, 0, 0.7);
+
+    transform: rotate(-0.4deg);
+}
+
+.discovery-card::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    background:
+        repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 5px,
+            rgba(70, 50, 20, 0.025) 6px
+        );
+}
+
+
+/* =========================================================
+   DISCOVERY CLOSE
+   ========================================================= */
+
+.close-discovery {
+    position: absolute;
+
+    top: 9px;
+    right: 12px;
+
+    z-index: 10;
+
+    width: 30px;
+    height: 30px;
+
+    border: none;
+
+    background: transparent;
+
+    color: #222;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 22px;
+
+    cursor: pointer;
+}
+
+.close-discovery:hover {
+    color: #7c242b;
+
+    transform: scale(1.1);
+}
+
+
+/* =========================================================
+   DISCOVERY CONTENT
+   ========================================================= */
+
+.discovery-stamp {
+    display: inline-block;
+
+    padding: 6px 10px;
+
+    margin-bottom: 18px;
+
+    border: 2px solid #7c242b;
+
+    color: #7c242b;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 8px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    transform: rotate(-3deg);
+}
+
+.discovery-symbol {
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 15px;
+
+    border: 1px solid rgba(0, 0, 0, 0.35);
+
+    background: rgba(0, 0, 0, 0.035);
+
+    color: #6d2027;
+
+    font-size: 25px;
+}
+
+.discovery-type {
+    margin-bottom: 7px;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+
+    opacity: 0.55;
+}
+
+.discovery-card h2 {
+    margin-bottom: 12px;
+
+    font-size: 24px;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+}
+
+.discovery-card > p {
+    color: var(--ink-soft);
+
+    font-size: 13px;
+
+    line-height: 1.8;
+}
+
+.discovery-note {
+    margin-top: 18px;
+
+    padding: 12px;
+
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+
+    font-family: Arial, sans-serif;
+}
+
+.discovery-note span {
+    display: block;
+
+    margin-bottom: 4px;
+
+    font-size: 7px;
+
+    letter-spacing: 1.5px;
+
+    opacity: 0.5;
+}
+
+.discovery-note strong {
+    font-size: 9px;
+
+    letter-spacing: 0.5px;
+}
+
+.continue-discovery {
+    margin-top: 20px;
+
+    padding: 11px 20px;
+
+    border: 1px solid #29251e;
+
+    background: #29251e;
+
+    color: var(--paper);
+
+    font-family: Arial, sans-serif;
+
+    font-size: 9px;
+
+    letter-spacing: 1.5px;
+
+    cursor: pointer;
+
+    transition: 0.25s ease;
+}
+
+.continue-discovery:hover {
+    background: #111;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   RTL
+   ========================================================= */
+
+body.arabic {
+    direction: rtl;
+}
+
+body.arabic .ministry-bar {
+    direction: rtl;
+}
+
+body.arabic .language-switcher {
+    direction: ltr;
+}
+
+body.arabic .paper-section {
+    direction: rtl;
+}
+
+body.arabic .paper-meta {
+    direction: rtl;
+}
+
+body.arabic .status-strip {
+    direction: rtl;
+}
+
+body.arabic .handwritten-note {
+    border-left: none;
+
+    border-right: 3px solid #777;
+}
+
+body.arabic .paper-footer {
+    direction: rtl;
+}
+
+body.arabic .return-button {
+    direction: rtl;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 850px) {
+
+    .scene-header {
+        padding-top: 45px;
+    }
+
+    .roots-marker {
+        left: 5%;
+    }
+
+    .water-marker {
+        right: 6%;
+    }
+
+    .flora-marker {
+        left: 10%;
+    }
+
+    .growth-marker {
+        right: 10%;
+    }
+
+    .evidence-tray {
+        right: 20px;
+        bottom: 85px;
+    }
+
+    .open-case {
+        right: 20px;
+        bottom: 25px;
+    }
+
+    .return-button {
+        left: 20px;
+        bottom: 25px;
+    }
+
+    .aster-evidence-content {
+        grid-template-columns: 1fr;
+    }
+
+    .feather-frame {
+        margin: 0 auto;
+    }
+
+    .symbol-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .ministry-bar {
+        padding: 11px 14px;
+    }
+
+    .ministry-title {
+        font-size: 8px;
+
+        letter-spacing: 1.5px;
+    }
+
+    .ministry-title small {
+        font-size: 6px;
+    }
+
+    .language-switcher button {
+        min-width: 29px;
+
+        padding: 5px;
+
+        font-size: 8px;
+    }
+
+    .greenhouse-scene {
+        min-height: 900px;
+    }
+
+    .scene-header {
+        padding-top: 38px;
+    }
+
+    .case-label {
+        font-size: 7px;
+
+        letter-spacing: 3px;
+    }
+
+    .scene-header h1 {
+        font-size: 36px;
+
+        letter-spacing: 4px;
+    }
+
+    .scene-header p {
+        font-size: 8px;
+
+        letter-spacing: 3px;
+    }
+
+    .evidence-marker {
+        padding: 6px 8px;
+    }
+
+    .marker-label {
+        font-size: 6px;
+
+        letter-spacing: 1px;
+    }
+
+    .roots-marker {
+        top: 33%;
+        left: 4%;
+    }
+
+    .water-marker {
+        top: 39%;
+        right: 4%;
+    }
+
+    .flora-marker {
+        top: 49%;
+        left: 5%;
+    }
+
+    .growth-marker {
+        top: 55%;
+        right: 5%;
+    }
+
+    .evidence-tray {
+        left: 50%;
+        right: auto;
+
+        bottom: 82px;
+
+        transform: translateX(-50%);
+
+        width: 88vw;
+    }
+
+    .open-case {
+        left: 50%;
+        right: auto;
+
+        bottom: 23px;
+
+        transform: translateX(-50%);
+
+        white-space: nowrap;
+    }
+
+    .return-button {
+        left: 50%;
+
+        bottom: -5px;
+
+        transform: translateX(-50%);
+
+        white-space: nowrap;
+    }
+
+    /* CASE FILE */
+
+    .case-overlay {
+        padding: 65px 10px 25px;
+    }
+
+    .paper-stack {
+        width: 100%;
+    }
+
+    .case-paper {
+        padding: 32px 20px 25px;
+    }
+
+    .close-case {
+        top: 9px;
+        right: 9px;
+
+        width: 34px;
+        height: 34px;
+
+        font-size: 22px;
+    }
+
+    .paper-header {
+        padding-right: 35px;
+    }
+
+    .paper-header {
+        align-items: flex-start;
+    }
+
+    .classified {
+        font-size: 7px;
+
+        padding: 6px 8px;
+    }
+
+    .paper-meta {
+        flex-wrap: wrap;
+
+        font-size: 7px;
+    }
+
+    .status-strip {
+        grid-template-columns: 1fr;
+    }
+
+    .status-strip > span {
+        border-right: none;
+
+        border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    }
+
+    .status-strip > span:last-child {
+        border-bottom: none;
+    }
+
+    .paper-section {
+        grid-template-columns: 35px 1fr;
+
+        gap: 10px;
+    }
+
+    .paper-evidence-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .correlation-top {
+        grid-template-columns: 35px 1fr;
+    }
+
+    .correlation-stamp {
+        display: none;
+    }
+
+    .same-mark {
+        flex-direction: column;
+
+        gap: 8px;
+    }
+
+    .connection-line {
+        display: none;
+    }
+
+    .symbol-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .paper-footer {
+        flex-direction: column;
+
+        text-align: center;
+    }
+
+    /* DISCOVERY */
+
+    .evidence-modal {
+        padding: 15px;
+    }
+
+    .discovery-card {
+        width: 94vw;
+
+        padding: 30px 22px;
+    }
+
+    .discovery-card h2 {
+        font-size: 20px;
+    }
+
+    .discovery-card > p {
+        font-size: 12px;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+    .scene-header h1 {
+        font-size: 31px;
+
+        letter-spacing: 3px;
+    }
+
+    .evidence-tray {
+        width: 92vw;
+    }
+
+    .case-paper {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
